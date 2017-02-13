@@ -27,7 +27,7 @@ class Admin::ProductsController < ApplicationController
   	@product = Product.find(params[:id])
   end
 
-  def updtae
+  def update
   	@product = Product.find(params[:id])
 
   	if @product.update(product_params)
