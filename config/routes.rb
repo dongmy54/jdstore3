@@ -19,5 +19,5 @@ resources :products do
 		end
 	end
 
-    reousrces :cart_items
+    resources :cart_items
 end
