@@ -17,3 +17,35 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+
+/*设置页脚*/
+
+ .footer-style {
+  background: #444;   /*背景颜色*/
+  font-size: 12px;   /*字体12px*/
+  height: 100px;     /*设置高度*/
+  line-height: 14px;      /*设置行高*/
+  color: white; /*字体颜色*/
+  margin-top: 100px; /*外边距*/
+   text-align: center;  /*文字居中*/
+ }
+
+
+.ul-style {
+   list-style-type: none; /*不要列表样式*/
+   text-align: center;  /*文字居中*/
+}
+
+.footer-style a {
+    color: white;   /*文字颜色*/
+    padding-right: 33px;      /*文字右边加点内边距*/
+    text-decoration: none; /*不要下划线啦，好丑*/
+    list-style-type: none;
+}
+
+.footer-style a:hover {
+  color: #C81623; /*鼠标一上去的时候，字体变成红色*/  
+}
+
+
+
