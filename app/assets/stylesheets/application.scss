@@ -47,5 +47,119 @@
   color: #C81623; /*鼠标一上去的时候，字体变成红色*/  
 }
 
+/*首页商品*/
+
+.product a {
+  color: black;   /*修改a标签文字颜色*/
+}
+
+.product p {
+  color: red;   /*修改产品价格颜色*/
+}
+
+.product img {
+   border-radius: 20px;  /*商品图片圆角*/
+}
+
+.product-all {
+  float: right;
+  font-size: 15px;
+  
+}
+
+.product-all a {
+  color: #505050; /*更多商品字体颜色*/
+}
+
+/*加底纹*/
+.shading {
+  /*background-image:url('https://ooo.0o0.ooo/2017/02/19/58a967e9e7c68.png');底纹*/
+  background-repeat: repeat; /*重复*/
+  padding-bottom: 40px;  /*下边距*/
+  padding-top:0px;  /*上边距*/
+  font-family: Arial ; /*修改整体字体*/
+}
+
+
+
+
+/*懂你部分*/
+.know-you {
+    font-size: 3rem;
+    text-align: center;
+    letter-spacing: 1.2rem;
+    clear: both;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0px;
+    padding: 10px 0;
+    font-weight: normal;
+    border-top: none;
+    background: #f1f1f1;
+    border-bottom: 1px solid #fff0f0;
+    text-align: center;
+}
+
+.heart {
+  font-size: 4rem;   /*把心变大*/
+}
+
+.lib-panel {
+    margin-bottom: 20Px;
+}
+.lib-panel img {
+    width: 100%;
+    background-color: transparent;
+}
+
+.lib-panel .row,
+ .col-md-6 {
+    padding: 0;
+    background-color: #FFFFFF;
+}
+
+
+.lib-panel .lib-row {
+    padding: 0 20px 0 20px;
+}
+
+.lib-panel .lib-row.lib-header {
+    background-color: #FFFFFF;
+    font-size: 20px;
+    padding: 10px 20px 0 20px;
+}
+
+.lib-panel .lib-row.lib-header .lib-header-seperator {
+    height: 2px;
+    width: 26px;
+    background-color: #d9d9d9;
+    margin: 7px 0 7px 0;
+}
+
+.lib-panel .lib-row.lib-desc {
+    position: relative;
+    height: 100%;
+    display: block;
+    font-size: 13px;
+}
+.lib-panel .lib-row.lib-desc a{
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    left: 20px;
+}
+
+.row-margin-bottom {
+    margin-bottom: 20px;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,.10);
+    box-shadow: 0 0 100px 0 rgba(0,0,0,.10);
+}
+
+.no-padding {
+    padding: 0;
+}
 
 
