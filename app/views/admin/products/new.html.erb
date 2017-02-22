@@ -1,6 +1,9 @@
 <h2> New Product </h2>
 
 <%= simple_form_for [:admin, @product] do |f| %>
+<div class="group">
+    <%= f.input :category, :collection => ["办公室","客厅", "餐厨", "卧室", "照明和电子产品","配件"], :selected => "办公室" %>
+</div>
 
 <div class="group">
 	<%= f.input :title %>

@@ -19,105 +19,22 @@
  @import "font-awesome";
 
 // navbar
-/*
-Credits:
-Code snippet by @maridlcrmn (Follow me on Twitter)
-Images by Nike.com (http://www.nike.com/us/en_us/)
-Logo by Sneaker-mission.com (http://www.sneaker-mission.com/)
-*/
-.navbar-brand {
-  width: 70px;
-  height: 50px;
-  background: url('http://www.sneaker-mission.com/uploads/3/1/2/7/31279819/5617441.png') no-repeat center center;
-  background-size: 50px;
-}
-
-.nav-tabs {
-  display: inline-block;
-  border-bottom: none;
-  padding-top: 15px;
-  font-weight: bold;
-}
-.nav-tabs > li > a,
-.nav-tabs > li > a:hover,
-.nav-tabs > li > a:focus,
-.nav-tabs > li.active > a,
-.nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus {
-  border: none;
-  border-radius: 0;
-}
-
+/* 类别部分 */
 .nav-list { border-bottom: px solid #eee; }
-.nav-list > li {
-  padding: 20px 15px 15px;
-
-}
 .nav-list > li:last-child { border-right: 0px solid #eee; }
-.nav-list > li > a:hover { text-decoration: none; }
+.nav-list > li > a:hover { font-size:110%; text-decoration: none; }
 .nav-list > li > a > span {
+  color:#444;
   display: block;
   font-weight: bold;
   text-transform: uppercase;
 }
-
+/* 类别部分over */
 .mega-dropdown { position: static !important; }
 .mega-dropdown-menu {
   padding: 20px 15px 15px;
   text-align: center;
   width: 100%;
-}
-
-
-#login-dp{
-    min-width: 250px;
-    padding: 14px 14px 0;
-    overflow:hidden;
-    background-color:rgba(255,255,255,.8);
-}
-#login-dp .help-block{
-    font-size:12px
-}
-#login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
-    border-top:1px solid #ddd;
-    clear:both;
-    padding:14px;
-}
-#login-dp .social-buttons{
-    margin:12px 0
-}
-#login-dp .social-buttons a{
-    width: 49%;
-}
-#login-dp .form-group {
-    margin-bottom: 10px;
-}
-.btn-fb{
-    color: #fff;
-    background-color:#3b5998;
-}
-.btn-fb:hover{
-    color: #fff;
-    background-color:#496ebc
-}
-.btn-tw{
-    color: #fff;
-    background-color:#55acee;
-}
-.btn-tw:hover{
-    color: #fff;
-    background-color:#59b5fa;
-}
-@media(max-width:768px){
-    #login-dp{
-        background-color: inherit;
-        color: #fff;
-    }
-    #login-dp .bottom{
-        background-color: inherit;
-        border-top:0 none;
-    }
 }
 .navbar-login
 {
@@ -155,20 +72,15 @@ Logo by Sneaker-mission.com (http://www.sneaker-mission.com/)
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-    background-color: rgb(51,79,111);
+    background-color: rgb(68,68,68);//导航栏背景颜色
 }
-
-
-
-
-
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
-    color: white;
+    color: red;
     background-color: #428bca;
 
 }
 .navbar-default .navbar-nav>li>a {
-    color: white;
+    color: white; //导航栏文字默认颜色
 }
 .dropdown-menu {
     position: absolute;
@@ -182,7 +94,7 @@ Logo by Sneaker-mission.com (http://www.sneaker-mission.com/)
     margin: 2px 0px 0px;
     font-size: 14px;
     list-style: none;
-    background-color: white;
+    background-color: white;//类别下拉页的背景颜色
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, 0.14902);
@@ -208,7 +120,7 @@ Logo by Sneaker-mission.com (http://www.sneaker-mission.com/)
 }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-    color: black;
+    color: white;
     cursor: default;
     background-color: rgb(255, 255, 255);
     border: solid black 1px;
@@ -229,8 +141,9 @@ body
 {
     border-radius: 0px;
 }
-.nav-pills>li[data-slide-to="0"].active a { background-color: #16a085; }
-.nav-pills>li[data-slide-to="1"].active a { background-color: #e67e22; }
-.nav-pills>li[data-slide-to="2"].active a { background-color: #2980b9; }
-.nav-pills>li[data-slide-to="3"].active a { background-color: #8e44ad; }
+
+#search-id {
+  width: 200px;//搜索框宽度
+  padding-top: 7px;//搜索框上下定位
+}
 // navbar over

@@ -16,9 +16,18 @@ namespace :admin do
 end
 
 resources :products do
-	member do
-		post :add_to_cart
+	  member do
+		  post :add_to_cart
 		end
+    collection do
+      get :search
+      get :bgs
+      get :kt
+      get :cc
+      get :ws
+      get :zmhdzcp
+      get :pj
+    end
 	end
 
 	resources :carts do
