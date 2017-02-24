@@ -87,7 +87,7 @@
 .know-you {
     font-size: 3rem;
     text-align: center;
-    letter-spacing: 1.2rem;
+    letter-spacing: 1.2rem;  /*字间距*/
     clear: both;
     position: relative;
     overflow: hidden;
@@ -161,5 +161,119 @@
 .no-padding {
     padding: 0;
 }
+
+/*商品详情页*/
+
+.tab {
+  list-style-type: none; /*去掉清单样式*/
+    margin: 0px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+.tab li {
+  float: left;   /*标题左浮动使其同行*/
+}
+
+.tab li a {
+  display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+
+
+#tab-default-1 {
+  border:1px solid #787878;  /*设置商品描述实线框*/
+  font-size: 30px;   
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#tab-dafault-1 img {
+  text-align: center;  /*让商品描述图片居中*/
+}
+
+.preview-type {
+  list-style-type: none; /*去掉清单样式*/
+}
+
+/*点击产品缩略图大图切换*/
+.tab-controller {
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+
+.tab-controller img {
+    float: left;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #DADADA;
+    padding: 5px;
+    margin: -10px 40px 10px 12px;
+    letter-spacing: 10px;
+}
+
+.tab-content1 {
+    display: none;
+    width: 749px;
+    height: 440px;
+}
+
+
+
+/* 产品索引 */
+.pro-index img {
+  border: 1px solid #787878;
+}
+.pro-index-font {
+  font-size: 14px;
+}
+
+.pro-index-font:link{
+  color: #787878;
+}
+
+/* test */
+.productDecription {
+  width: 1200px;
+  height: 600px;
+  text-align: center;
+  margin: 20px auto;
+  border: 1px solid #50514F;
+  line-height: 30px;
+}
+
+.test-color {
+  background: black;
+   float: left;
+}
+.test {
+  width: 800px;
+  height: 250px;
+  border: 5px solid #50514f;
+
+  text-align: center;
+  background: green;
+}
+.test-1 {
+  width: 500px;
+  height: 200px;
+}
+
+.test-2 {
+  letter-spacing: -10px;
+  width: 40px;
+  color: white;
+  font-size: 20px;
+  background: red;
+}
+
+
+
 
 

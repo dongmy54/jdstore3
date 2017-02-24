@@ -1,27 +1,75 @@
+<div class="container">
 <div class="row">
 	<div class="col-md-6">
 		<% if @product.photos.present? %>
-			<%= image_tag(@product.photos[0].image.medium.url, class: "thumbnail") %>
+    <div>
+        <div class="tab-content1" style="display: block;">
+          <%= image_tag(@product.photos[0].image.medium.url, class: "thumbnail") %>
+       </div>
+        <div class="tab-content1"><%= image_tag(@product.photos[1].image.medium.url, class: "thumbnail") %></div>
+         <div class="tab-content1"><%= image_tag(@product.photos[2].image.medium.url, class: "thumbnail") %></div>
+          <div class="tab-content1"><%= image_tag(@product.photos[3].image.medium.url, class: "thumbnail") %></div>
+   </div>
+
 			<% else %>
 			<%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-		<% end %>
-	</div>
-	<div class="col-md-6">
-       <h2> <%= @product.title %> </h2>
+      <% end %>
+   <% if @product.photos[3].present? %>
+       <div>
+          <div class="tab-controller"><%= image_tag(@product.photos[0].image.medium.url, class: "thumbnail") %></div>
+          <div class="tab-controller"><%= image_tag(@product.photos[1].image.medium.url, class: "thumbnail") %></div>
+          <div class="tab-controller"><%= image_tag(@product.photos[2].image.medium.url, class: "thumbnail") %></div>
+          <div class="tab-controller"><%= image_tag(@product.photos[3].image.medium.url, class: "thumbnail") %></div>
+      </div>
+      <% else %>
+        <p style="color: red;">图片数量不够4张</p>
+       <% end %>
+ </div>
+	<div class="col-md-6" style="margin-left: -10px">
+       <p style="font-size: 36px;"> <%= @product.title %> </p>
        <div style="height: 100px;">
        	<p>
        		<%= @product.description %>
        	</p>
        </div>		
-       <div> 数量 : <%= @product.quantity %> </div>
-       <div class="product-price"> ￥ <%= @product.price %></div>
-      
-       <div class="pull-right">
+       <div style="font-size: 15px"> 库存    <%= @product.quantity %> 件</div>
+        <br>
+       <div class="product-price" style="font-size: 15px">售价   <span style="font-size: 20px; color: #fc3820;">￥<%= @product.price %></span></div>
+
+      <br>
+       <div>
        <% if @product.quantity.present? && @product.quantity > 0 %>
        	    <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
                   <% else %>
                   以销售一空， 无法购买
                   <% end %>
        </div>
+      <p style="margin-top: 10px; font-size: 15px;">首单立减<span style="color: #fc3820">500</span></p>
 	</div>
 </div>
+
+<!--商品描述部分-->
+<div>
+   <ul class="tab">
+         <li class="active">
+           <a href="#tab-default-1">商品详情</a>    
+         </li>
+         <li>
+        <a href="#tab-default-2">商品评价</a>
+         </li>
+   </ul>
+
+<div id="tab-default-1">
+  <p class="product-description" style="margin-top: 15px;"><%= @product.description %></p>
+     <% if @product.photos.present? %>
+               <% @product.photos.each do |p| %>
+                <%= image_tag p.image.url %><br />
+                <% end %>
+             <% end %>
+</div>   
+</div>
+
+<button><h3>哦我的</h3></button>
+
+</div>
+
