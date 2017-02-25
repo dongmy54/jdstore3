@@ -92,7 +92,7 @@
     padding-left: 0px;//导航栏到窗口左端距离，15改为0
     margin-right: auto;
     margin-left: auto;
-    background-color: rgb(68,68,68);//导航栏背景颜色
+    background-color: rgb(57,57,57);//导航栏背景颜色
 }
 .navbar-default{
   border-style: none;//导航栏边框效果
@@ -105,16 +105,89 @@
 .navbar-default .navbar-nav > li.active > a,
 .navbar-default .navbar-nav > li.active > a:hover,
 .navbar-default .navbar-nav > li.active > a:focus {
-  color: rgb(230,0,18);//导航栏文字动态颜色 by sunny
+  color: rgb(237,76,28);//导航栏文字动态颜色 by sunny
 }
 
 #search-id {
   width: 200px;//搜索框宽度
   padding-top: 7px;//搜索框上下定位
 }
-
 // navbar over
-=======
+
+
+// login
+.x-hidden{
+  overflow-x:hidden;
+  background-size: cover;
+}
+
+.signup-hero {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    z-index: 3;
+      -webkit-transform: translate3d(-50%,-50%,0);
+         -moz-transform: translate3d(-50%,-50%,0);
+          -ms-transform: translate3d(-50%,-50%,0);
+           -o-transform: translate3d(-50%,-50%,0);
+              transform: translate3d(-50%,-50%,0);
+}
+
+.panel-default {
+opacity: 0.9;
+margin-top:60px;
+}
+.form-group.last { margin-bottom:0px; }
+//login over
+
+//sign_up
+.main{
+margin-top:100px;
+-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.24);
+-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.24);
+box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.24);
+padding:0px;
+}
+.left-side{
+	padding:0px 0px 100px;
+	background:rgb(237,76,28);
+	background-size:cover;
+  height:514px;
+  opacity: 0.9;
+}
+.left-side h1{
+	font-size: 70px;
+    font-weight: 900;
+	color:#FFF;
+	padding: 50px 10px 00px 26px;
+	}
+	.left-side p{
+    font-weight:600;
+	color:#FFF;
+	padding:10px 10px 10px 26px;
+	}
+	.right-side{
+	padding:5px 0px 100px;
+	background:#FFF;
+	background-size:cover;
+	min-height:514px;
+  height:514px;
+  opacity: 0.9;
+}
+	.right-side h1{
+	font-size: 30px;
+    font-weight: 700;
+	color:#000;
+	padding: 50px 10px 00px 50px;
+	}
+	.right-side p{
+    font-weight:600;
+	color:#000;
+	padding:10px 50px 10px 50px;
+	}
+	.form{padding:10px 50px 10px 50px;}
+//sign_up over
+
 /*设置页脚*/
 
  .footer-style {

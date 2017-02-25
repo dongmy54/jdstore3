@@ -1,0 +1,33 @@
+<div class="x-hidden">
+<img src="https://ww2.sinaimg.cn/large/006tNbRwgy1fd1ynwsajcj315o0m8ttf.jpg" />
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="container signup-hero">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-7">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-lock"></span>欢迎登录ILIFE商城！</div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form">
+                      <div class="form-inputs">
+                        <%= f.input :email, required: false, autofocus: true, :label => "注册邮箱：" %>
+                        <%= f.input :password, required: false, :label => "密码：" %>
+                        <%= f.input :remember_me,:label => "记住我", as: :boolean if devise_mapping.rememberable?%>
+                      </div>
+                      <div class="form-actions">
+                        <%= f.button :submit, "登录" %>
+                        <button type="reset" class="btn btn-default btn-md">重置</button>
+                      </div>
+                    </form>
+                </div>
+
+                <div class="panel-footer">
+                    <li><a href="/users/sign_up">注册新用户</a></li>
+                    <li><a href="/users/password/new">寻回密码</a></li>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% end %>
+</div>
