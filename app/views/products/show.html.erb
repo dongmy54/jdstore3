@@ -3,12 +3,12 @@
 	<div class="col-md-6">
 		<% if @product.photos.present? %>
     <div>
-        <div class="tab-content1" style="display: block;">
+        <div class="tab-content1" style="display: block;margin-top: 30px;">
           <%= image_tag(@product.photos[0].image.medium.url, class: "thumbnail") %>
        </div>
-        <div class="tab-content1"><%= image_tag(@product.photos[1].image.medium.url, class: "thumbnail") %></div>
-         <div class="tab-content1"><%= image_tag(@product.photos[2].image.medium.url, class: "thumbnail") %></div>
-          <div class="tab-content1"><%= image_tag(@product.photos[3].image.medium.url, class: "thumbnail") %></div>
+        <div class="tab-content1" style="margin-top: 30px;"><%= image_tag(@product.photos[1].image.medium.url, class: "thumbnail") %></div>
+         <div class="tab-content1" style="margin-top: 30px;"><%= image_tag(@product.photos[2].image.medium.url, class: "thumbnail") %></div>
+          <div class="tab-content1" style="margin-top: 30px;"><%= image_tag(@product.photos[3].image.medium.url, class: "thumbnail") %></div>
    </div>
 
 			<% else %>
@@ -26,7 +26,7 @@
        <% end %>
  </div>
 	<div class="col-md-6" style="margin-left: -10px">
-       <p style="font-size: 36px;"> <%= @product.title %> </p>
+       <p style="font-size: 36px;margin-top: 30px;"> <%= @product.title %> </p>
        <div style="height: 100px;">
        	<p>
        		<%= @product.description %>
