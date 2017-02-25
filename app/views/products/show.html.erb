@@ -6,9 +6,12 @@
         <div class="tab-content1" style="display: block;margin-top: 30px;">
           <%= image_tag(@product.photos[0].image.medium.url, class: "thumbnail") %>
        </div>
+          <% if @product.photos[3].present? %>
+
         <div class="tab-content1" style="margin-top: 30px;"><%= image_tag(@product.photos[1].image.medium.url, class: "thumbnail") %></div>
          <div class="tab-content1" style="margin-top: 30px;"><%= image_tag(@product.photos[2].image.medium.url, class: "thumbnail") %></div>
           <div class="tab-content1" style="margin-top: 30px;"><%= image_tag(@product.photos[3].image.medium.url, class: "thumbnail") %></div>
+          <% end %>
    </div>
 
 			<% else %>
