@@ -21,7 +21,7 @@
 /*设置页脚*/
 
  .footer-style {
-  background: #444;   /*背景颜色*/
+  background: #444444;   /*背景颜色*/
   font-size: 12px;   /*字体12px*/
   height: 100px;     /*设置高度*/
   line-height: 14px;      /*设置行高*/
@@ -238,41 +238,48 @@
   color: #787878;
 }
 
-/* test */
-.productDecription {
+.bg-index {
   width: 1200px;
-  height: 600px;
-  text-align: center;
+  height: 40px;
   margin: 20px auto;
-  border: 1px solid #50514F;
-  line-height: 30px;
 }
 
-.test-color {
-  background: black;
-   float: left;
-}
-.test {
-  width: 800px;
-  height: 250px;
-  border: 5px solid #50514f;
-
-  text-align: center;
-  background: green;
-}
-.test-1 {
-  width: 500px;
-  height: 200px;
+.bg-index-button {
+  float: left;
+  width: 80px;
+  margin-right: 10px;
+  font-size: 18px;
+  height: 40px;
+  background: #F0F0F0;
 }
 
-.test-2 {
-  letter-spacing: -10px;
-  width: 40px;
-  color: white;
-  font-size: 20px;
-  background: red;
+.btn-info {
+
+}
+/*常用背景颜色*/
+.color-1 {
+  background: #787878;
 }
 
+.color-2 {
+  background: #D9D9D9;
+}
+
+.color-3 {
+  background: #0D0D0D;
+}
+
+.color-4 {
+  background: yellow;
+}
+
+.color-5 {
+  background: #909090;
+}
+
+.color-6 {
+  background: #F393EE;
+}
 
 
 
