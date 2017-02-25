@@ -18,6 +18,103 @@
  @import "bootstrap";
  @import "font-awesome";
 
+// navbar
+/* 类别部分 */
+.nav-list { border-bottom: px solid #eee; }
+.nav-list > li:last-child { border-right: 0px solid #eee; }
+.nav-list > li > a:hover { font-size:110%; text-decoration: none; }//文字放大效果
+.nav-list > li > a > span {
+  color:#444;//改文字颜色
+  display: block;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.mega-dropdown { position: static !important; }
+.mega-dropdown-menu {
+  padding: 20px 15px 15px;
+  text-align: center;//文字居中
+  width: 100%;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0px; //控制“类别”整个下拉页面到窗口左端的距离
+    z-index: 1000;//定义屏幕纵深方向的顺序
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0px;//5px控制“类别”下拉页面中的图片上下端的距离
+    margin: 2px 0px 0px;//影响整个下拉页面
+    font-size: 14px;
+    list-style: none;//表明list项前面没有什么修饰（一片空白）
+    background-color: white;//类别下拉页的背景颜色
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.14902);//边框效果
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    border-radius: 4px;//边框效果
+    box-shadow: rgba(0, 0, 0, 0.172549) 0px 6px 12px;//边框效果
+}
+.nav-list > li {
+    padding: 20px 55px 55px;//控制各“类别”项目之间的距离 by sunny
+    border-left:0px;
+}
+.nav-list {
+    border-bottom: 0px;
+}
+/* 类别部分over */
+.navbar{
+  margin-bottom: -5px;
+  margin-left: -20px;
+  margin-right: -20px;
+  border-radius: 0;
+}
+.icon-size
+{
+    font-size: 87px;
+}
+.navbar-brand {
+    width: 70px;
+    height: 50px;
+    background: no-repeat center center;
+    background-size: 50px;
+    padding-top: 7px;
+}
+.navbar-nav {
+    padding-left: 15px;
+}
+.navbar-container-fluid {
+    padding-right: 0px;//导航栏到窗口右端距离，15改为0
+    padding-left: 0px;//导航栏到窗口左端距离，15改为0
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgb(68,68,68);//导航栏背景颜色
+}
+.navbar-default{
+  border-style: none;//导航栏边框效果
+}
+.navbar-default .navbar-nav>li>a {
+    color: white; //导航栏文字默认颜色
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li.active > a,
+.navbar-default .navbar-nav > li.active > a:hover,
+.navbar-default .navbar-nav > li.active > a:focus {
+  color: rgb(230,0,18);//导航栏文字动态颜色 by sunny
+}
+
+#search-id {
+  width: 200px;//搜索框宽度
+  padding-top: 7px;//搜索框上下定位
+}
+
+// navbar over
+=======
 /*设置页脚*/
 
  .footer-style {
@@ -280,6 +377,7 @@
 .color-6 {
   background: #F393EE;
 }
+
 
 
 

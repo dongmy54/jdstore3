@@ -1,5 +1,5 @@
 class Admin::ProductsController < ApplicationController
-   
+
    before_action :authenticate_user!
    before_action :admin_required
 
@@ -7,6 +7,10 @@ class Admin::ProductsController < ApplicationController
 
   def index
   	@products = Product.all
+  end
+
+  def show
+    @product = Product.find(params[:id])
   end
 
   def new
@@ -42,6 +46,7 @@ class Admin::ProductsController < ApplicationController
   def update
   	@product = Product.find(params[:id])
 
+
   	if params[:photos] != nil
       @product.photos.destroy_all
       params[:photos]['image'].each do |a|
@@ -57,9 +62,16 @@ class Admin::ProductsController < ApplicationController
   	end
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    flash[:alert] = "Product deleted"
+    redirect_to admin_products_path
+  end
+
   private
 
   def product_params
-  	params.require(:product).permit(:title, :description, :quantity, :price, :image)
+  	params.require(:product).permit(:title, :description, :quantity, :price, :image, :category)
   end
 end

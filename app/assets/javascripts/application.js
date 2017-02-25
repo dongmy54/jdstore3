@@ -17,6 +17,9 @@
 //= require bootstrap/dropdown
 //= require_tree .
 
+//= require bootstrap-sprockets
+
+
 $(document).on('click', '.tab-controller', function () {
   var index = $(this).index() //拿到缩略图编号的index，第一个是0，第二个是1，以此类推
   $('.tab-content1').hide() //所有的内容都隐藏
