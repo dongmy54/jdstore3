@@ -21,14 +21,17 @@
 		<%= f.input :price %>
 	</div>
 
-	<% if @product.image.present? %>
+	<% if @product.photos.present? %>
 		<span>目前商品图</span> <br>
-		<%= image_tag(@product.image.thumb.url) %>
+		<% @product.photos.each do |p| %>
+       <%= image_tag p.image.thumb.url %><br />
+       <% end %>
 	<% end %>
 
 	<div class="group">
-		<%= f.input :image, as: :file %>
-	</div>
+    <%= f.label :image %><br>
+    <%= f.file_field :image, :multiple => true, name: "photos[image][]" %>（"如需更改请上传5张商品图片"）<br>
+ </div>
 
 	<%= f.submit "Submit", data: {disable_with: "Submitting..."} %>
 

@@ -114,3 +114,271 @@
 }
 
 // navbar over
+=======
+/*设置页脚*/
+
+ .footer-style {
+  background: #444444;   /*背景颜色*/
+  font-size: 12px;   /*字体12px*/
+  height: 100px;     /*设置高度*/
+  line-height: 14px;      /*设置行高*/
+  color: white; /*字体颜色*/
+  margin-top: 100px; /*外边距*/
+   text-align: center;  /*文字居中*/
+ }
+
+
+.ul-style {
+   list-style-type: none; /*不要列表样式*/
+   text-align: center;  /*文字居中*/
+}
+
+.footer-style a {
+    color: white;   /*文字颜色*/
+    padding-right: 33px;      /*文字右边加点内边距*/
+    text-decoration: none; /*不要下划线啦，好丑*/
+    list-style-type: none;
+}
+
+.footer-style a:hover {
+  color: #C81623; /*鼠标一上去的时候，字体变成红色*/  
+}
+
+/*首页商品*/
+
+.product a {
+  color: black;   /*修改a标签文字颜色*/
+}
+
+.product p {
+  color: red;   /*修改产品价格颜色*/
+}
+
+.product img {
+   border-radius: 20px;  /*商品图片圆角*/
+}
+
+.product-all {
+  float: right;
+  font-size: 15px;
+  
+}
+
+.product-all a {
+  color: #505050; /*更多商品字体颜色*/
+}
+
+/*加底纹*/
+.shading {
+  /*background-image:url('https://ooo.0o0.ooo/2017/02/19/58a967e9e7c68.png');底纹*/
+  background-repeat: repeat; /*重复*/
+  padding-bottom: 40px;  /*下边距*/
+  padding-top:0px;  /*上边距*/
+  font-family: Arial ; /*修改整体字体*/
+}
+
+
+
+
+/*懂你部分*/
+.know-you {
+    font-size: 3rem;
+    text-align: center;
+    letter-spacing: 1.2rem;  /*字间距*/
+    clear: both;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0px;
+    padding: 10px 0;
+    font-weight: normal;
+    border-top: none;
+    background: #f1f1f1;
+    border-bottom: 1px solid #fff0f0;
+    text-align: center;
+}
+
+.heart {
+  font-size: 4rem;   /*把心变大*/
+}
+
+.lib-panel {
+    margin-bottom: 20Px;
+}
+.lib-panel img {
+    width: 100%;
+    background-color: transparent;
+}
+
+.lib-panel .row,
+ .col-md-6 {
+    padding: 0;
+    background-color: #FFFFFF;
+}
+
+
+.lib-panel .lib-row {
+    padding: 0 20px 0 20px;
+}
+
+.lib-panel .lib-row.lib-header {
+    background-color: #FFFFFF;
+    font-size: 20px;
+    padding: 10px 20px 0 20px;
+}
+
+.lib-panel .lib-row.lib-header .lib-header-seperator {
+    height: 2px;
+    width: 26px;
+    background-color: #d9d9d9;
+    margin: 7px 0 7px 0;
+}
+
+.lib-panel .lib-row.lib-desc {
+    position: relative;
+    height: 100%;
+    display: block;
+    font-size: 13px;
+}
+.lib-panel .lib-row.lib-desc a{
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    left: 20px;
+}
+
+.row-margin-bottom {
+    margin-bottom: 20px;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,.10);
+    box-shadow: 0 0 100px 0 rgba(0,0,0,.10);
+}
+
+.no-padding {
+    padding: 0;
+}
+
+/*商品详情页*/
+
+.tab {
+  list-style-type: none; /*去掉清单样式*/
+    margin: 0px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+.tab li {
+  float: left;   /*标题左浮动使其同行*/
+}
+
+.tab li a {
+  display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+
+
+#tab-default-1 {
+  border:1px solid #787878;  /*设置商品描述实线框*/
+  font-size: 30px;   
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#tab-dafault-1 img {
+  text-align: center;  /*让商品描述图片居中*/
+}
+
+.preview-type {
+  list-style-type: none; /*去掉清单样式*/
+}
+
+/*点击产品缩略图大图切换*/
+.tab-controller {
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+
+.tab-controller img {
+    float: left;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #DADADA;
+    padding: 5px;
+    margin: -10px 40px 10px 12px;
+    letter-spacing: 10px;
+}
+
+.tab-content1 {
+    display: none;
+    width: 749px;
+    height: 440px;
+}
+
+
+
+/* 产品索引 */
+.pro-index img {
+  border: 1px solid #787878;
+}
+.pro-index-font {
+  font-size: 14px;
+}
+
+.pro-index-font:link{
+  color: #787878;
+}
+
+.bg-index {
+  width: 1200px;
+  height: 40px;
+  margin: 20px auto;
+}
+
+.bg-index-button {
+  float: left;
+  width: 80px;
+  margin-right: 10px;
+  font-size: 18px;
+  height: 40px;
+  background: #F0F0F0;
+}
+
+.btn-info {
+
+}
+/*常用背景颜色*/
+.color-1 {
+  background: #787878;
+}
+
+.color-2 {
+  background: #D9D9D9;
+}
+
+.color-3 {
+  background: #0D0D0D;
+}
+
+.color-4 {
+  background: yellow;
+}
+
+.color-5 {
+  background: #909090;
+}
+
+.color-6 {
+  background: #F393EE;
+}
+
+
+
+
+
