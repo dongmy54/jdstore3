@@ -20,14 +20,18 @@
 	<div class="group">
 		<%= f.input :price %>
 	</div>
-
+    
+    
 	<% if @product.photos.present? %>
 		<span>目前商品图</span> <br>
 		<% @product.photos.each do |p| %>
+		<div style="float: left;">
        <%= image_tag p.image.thumb.url %><br />
+          </div>
        <% end %>
 	<% end %>
-
+ 
+  
 	<div class="group">
     <%= f.label :image %><br>
     <%= f.file_field :image, :multiple => true, name: "photos[image][]" %>（"如需更改请上传5张商品图片"）<br>
