@@ -80,7 +80,7 @@
    <% @comments.each do |comment| %>
   <div class="comment-commenter ">
   <p style="float: left;font-weight: bold;"><%= comment.commenter %></p>
-  <p style="margin-left: 50px;float: left;"><%= comment.created_at %></p>
+  <p style="margin-left: 50px;float: left;"><%= comment.created_at.localtime %></p>
   </div>
   <div class="comment-description" >
       <p style="background-color: #f1f1f1;"> <%= comment.description %></p>
