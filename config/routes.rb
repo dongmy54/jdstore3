@@ -16,6 +16,7 @@ namespace :admin do
 end
 
 resources :products do
+  resources :comments 
 	  member do
 		  post :add_to_cart
 		end
@@ -49,5 +50,6 @@ resources :products do
     namespace :account do
     	resources :orders
     end
+
 
 end

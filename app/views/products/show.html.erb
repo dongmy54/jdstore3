@@ -4,7 +4,7 @@
 		<% if @product.photos.present? %>
     <div>
         <div class="tab-content1" style="display: block;margin-top: 30px;">
-          <%= image_tag(@product.photos[0].image.medium.url, class: "thumbnail") %>
+          <%= image_tag(@photos[0].image.medium.url, class: "thumbnail") %>
        </div>
           <% if @product.photos[3].present? %>
 
@@ -54,11 +54,11 @@
 <!--商品描述部分-->
 <div>
    <ul class="tab">
-         <li class="active">
+         <li>
            <a href="#tab-default-1">商品详情</a>    
          </li>
          <li>
-        <a href="#tab-default-2">商品评价</a>
+        <a href="#comments">商品评价(<%= @product.comments.count %>)</a>
          </li>
    </ul>
 
@@ -72,5 +72,29 @@
 </div>   
 </div>
 
+
+<div id="comments" class="comment-title">
+  <p style="font-size: 25px;margin-top: 20px;">商品评论(<%= @product.comments.count %>)</p> 
+  </div>
+ <hr>
+   <% @comments.each do |comment| %>
+  <div class="comment-commenter ">
+  <p style="float: left;font-weight: bold;"><%= comment.commenter %></p>
+  <p style="margin-left: 50px;float: left;"><%= comment.created_at %></p>
+  </div>
+  <div class="comment-description" >
+      <p style="background-color: #f1f1f1;"> <%= comment.description %></p>
+  </div>
+  <% end %> 
+
+  <% if is_commenter?(@comments) %>
+  <%= simple_form_for([@product, @product.comments.build]) do |f| %>
+  <%= f.input :description, label: "添加评论" , class: "form-control"%>
+  <%= f.submit "提交", class: "btn btn-info" %>
+   <% end %>
+   <% else %>
+   <p style="font-weight: bold;font-size: 20px;"><span style="font-size: 25px;">🙏</span>你的留言，我们正在不断完善中！</p>
+   <% end %>
+   
 </div>
 

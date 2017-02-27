@@ -355,6 +355,11 @@ padding:0px;
     text-decoration: none;
 }
 
+.tab li a:hover, .tab li.active a {
+    color: black !important;
+    background-color: #f1f1f1 !important;
+}
+
 
 
 #tab-default-1 {
@@ -452,7 +457,38 @@ padding:0px;
   background: #F393EE;
 }
 
+/* product comment */
+.bg-color1 {
+  background: #50514F; 
+}
+
+.bg-color2 {
+  background: #F25F5C; 
+}
+
+.bg-color3 {
+  background: #FFE066; 
+}
+
+.bg-color4 {
+  background: #247BA0; 
+}
+
+.bg-color5 {
+  background: #70C1B3; 
+}
 
 
 
-
+.comment-title {
+  width:  600px;
+  height:  30px;
+}
+.comment-commenter {
+  width:  500px;
+  height:  30px;
+}
+.comment-description {
+  width: 800px;
+  height: 40px;
+}
