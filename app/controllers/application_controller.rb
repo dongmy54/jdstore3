@@ -15,12 +15,15 @@ class ApplicationController < ActionController::Base
   end
 
   def is_commenter?(comments)
-     commenter = comments.find_by_commenter(current_user.email)
-     if commenter.blank?
-       return true
-     else
-      return false
-     end
+    if current_user.blank?
+      return true
+     else  commenter = comments.find_by_commenter(current_user.email)
+           if commenter.blank?
+              return true
+            else
+            return false
+            end
+    end
   end
 
   private
