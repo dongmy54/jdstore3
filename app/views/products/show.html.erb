@@ -34,7 +34,7 @@
        	<p>
        		<%= @product.description %>
        	</p>
-       </div>		
+       </div>
        <div style="font-size: 15px"> 库存    <%= @product.quantity %> 件</div>
         <br>
        <div class="product-price" style="font-size: 15px">售价   <span style="font-size: 20px; color: #fc3820;">￥<%= @product.price %></span></div>
@@ -44,7 +44,7 @@
        <% if @product.quantity.present? && @product.quantity > 0 %>
        	    <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
                   <% else %>
-                  以销售一空， 无法购买
+                  已销售一空， 无法购买
                   <% end %>
        </div>
       <p style="margin-top: 10px; font-size: 15px;">首单立减<span style="color: #fc3820">500</span></p>
@@ -55,7 +55,7 @@
 <div>
    <ul class="tab">
          <li>
-           <a href="#tab-default-1">商品详情</a>    
+           <a href="#tab-default-1">商品详情</a>
          </li>
          <li>
         <a href="#comments">商品评价(<%= @product.comments.count %>)</a>
@@ -69,12 +69,12 @@
                 <%= image_tag p.image.url %><br />
                 <% end %>
              <% end %>
-</div>   
+</div>
 </div>
 
 
 <div id="comments" class="comment-title">
-  <p style="font-size: 25px;margin-top: 20px;">商品评论(<%= @product.comments.count %>)</p> 
+  <p style="font-size: 25px;margin-top: 20px;">商品评论(<%= @product.comments.count %>)</p>
   </div>
  <hr>
    <% @comments.each do |comment| %>
@@ -85,7 +85,7 @@
   <div class="comment-description" >
       <p style="background-color: #f1f1f1;"> <%= comment.description %></p>
   </div>
-  <% end %> 
+  <% end %>
 
   <% if is_commenter?(@comments) %>
   <%= simple_form_for([@product, @product.comments.build]) do |f| %>
@@ -95,6 +95,5 @@
    <% else %>
    <p style="font-weight: bold;font-size: 20px;"><span style="font-size: 25px;">🙏</span>你的留言，我们正在不断完善中！</p>
    <% end %>
-   
-</div>
 
+</div>

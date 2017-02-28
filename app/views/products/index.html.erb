@@ -20,20 +20,25 @@
 					<%= link_to product_path(product) do %>
 		      <% if product.photos.present? %>
 		        <%= image_tag(product.photos[0].image.thumb.url ) %>
-		      <% else %>
+		       <% else %>
 		        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-		      <% end %>
+		       <% end %>
 			    <% end %>
-          <h4><%= link_to(product.title, product_path(product)) %></h4>
+          <h4><%= link_to(product.title, product_path(product),:class => "link") %></h4>
       		<p class="price">￥<%= product.price %></p>
 					<p><%= product.description %></p>
       			<hr class="line">
 						<div class="row">
 							<div class="col-md-4">
-								<a class="btn btn-primary btn-product"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a>
+								<%= link_to(add_to_cart_product_path(product), :method => :post, :class => "link") do %>
+								<i class="fa fa-heart"> </i>收藏
+								<% end %>
 							</div>
-							<div class="col-md-4">
-								<a href="#" class="btn btn-success btn-product"><span class="glyphicon glyphicon-shopping-cart"></span> Buy</a></div>
+							<div class="col-md-3.5">
+								<%= link_to(add_to_cart_product_path(product), :method => :post, :class => "link") do %>
+                    <i class="fa fa-shopping-cart"> </i>购买
+								<% end %>
+						  </div>
 						</div>
 				</span>
 			</div>
