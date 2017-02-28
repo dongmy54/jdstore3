@@ -47,6 +47,6 @@
   </div>
 <!-- 下半页over	 -->
 <div class="text-center">
-	<%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
+	<%= will_paginate(@products,:prev_label => '上一页',:next_label => '下一页',renderer: BootstrapPagination::Rails) %>
 </div>
 </div>
