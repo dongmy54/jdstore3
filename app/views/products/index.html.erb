@@ -25,7 +25,7 @@
 		      <% end %>
 			    <% end %>
           <h4><%= link_to(product.title, product_path(product)) %></h4>
-      					<p class="price">￥<%= product.price %></p>
+      		<p class="price">￥<%= product.price %></p>
 					<p><%= product.description %></p>
       			<hr class="line">
 						<div class="row">
@@ -41,4 +41,7 @@
     <!-- END PRODUCTS -->
   </div>
 <!-- 下半页over	 -->
+<div class="text-center">
+	<%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
+</div>
 </div>
