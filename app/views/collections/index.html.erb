@@ -1,6 +1,8 @@
 
    <div class="container">	 
-    
+    <% if collections_count == 0 %>
+        <h3 style="margin-top: 40px;">亲，你还没有收藏的商品哦！</h3>
+    <% else %>
     <h3 style="margin-top: 40px;">亲，收藏的商品都赶来了！</h3>
 	 <table class="table table-bordered">
 			<thead>
@@ -45,6 +47,7 @@
 				</span>
 			</span>
 		</div>
+		<% end %>
    </div>
 
 
