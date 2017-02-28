@@ -214,7 +214,7 @@ padding:0px;
 }
 
 .footer-style a:hover {
-  color: #C81623; /*鼠标一上去的时候，字体变成红色*/  
+  color: #C81623; /*鼠标一上去的时候，字体变成红色*/
 }
 
 /*首页商品*/
@@ -234,7 +234,7 @@ padding:0px;
 .product-all {
   float: right;
   font-size: 15px;
-  
+
 }
 
 .product-all a {
@@ -364,7 +364,7 @@ padding:0px;
 
 #tab-default-1 {
   border:1px solid #787878;  /*设置商品描述实线框*/
-  font-size: 30px;   
+  font-size: 30px;
   text-align: center;
   padding-bottom: 10px;
 }
@@ -459,23 +459,23 @@ padding:0px;
 
 /* product comment */
 .bg-color1 {
-  background: #50514F; 
+  background: #50514F;
 }
 
 .bg-color2 {
-  background: #F25F5C; 
+  background: #F25F5C;
 }
 
 .bg-color3 {
-  background: #FFE066; 
+  background: #FFE066;
 }
 
 .bg-color4 {
-  background: #247BA0; 
+  background: #247BA0;
 }
 
 .bg-color5 {
-  background: #70C1B3; 
+  background: #70C1B3;
 }
 
 
@@ -492,3 +492,91 @@ padding:0px;
   width: 800px;
   height: 40px;
 }
+
+//全部商品页
+/*上半页*/
+.spy-body {
+font: 400 1em/1.5 "Neuton";
+background: #444444;
+color: rgba(255, 255, 255, 0.25);//小号文字的颜色
+text-align: center;
+margin: 20px auto;
+width:auto;
+}
+.spy-p {
+text-transform: uppercase;
+letter-spacing: .5em;
+display: inline-block;
+border: 4px double #fff;
+border-width: 4px 0;
+padding: 1.5em 0em;
+width: 40em;
+margin: 30px auto;
+}
+.spy-p span {
+font: 700 4em/1 "Oswald", sans-serif;
+letter-spacing: 0;
+padding: .25em 0 .325em;
+display: block;
+margin: 0 auto;
+text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+/* Clip Background Image */
+background: url(http://likebangla.tk/demo/animated_text_fill.png) repeat-y;//斜边条纹效果
+-webkit-background-clip: text;
+/* Animate Background Image */
+-webkit-text-fill-color: transparent;
+-webkit-animation: aitf 80s linear infinite;
+/* Activate hardware acceleration for smoother animations */
+-webkit-transform: translate3d(0, 0, 0);
+-webkit-backface-visibility: hidden;
+}
+
+/* Animate Background Image */
+@-webkit-keyframes aitf {
+0% {
+background-position: 0% 50%;
+}
+100% {
+background-position: 100% 50%;
+}
+}
+
+/*上半页over*/
+
+/*下半页*/
+h4{
+  font-weight: 600;
+}
+p{
+font-size: 12px;
+margin-top: 5px;
+}
+.price{
+font-size: 30px;
+  margin: 0 auto;
+  color: #333;
+}
+.right{
+float:right;
+border-bottom: 2px solid #4B8E4B;
+}
+.thumbnail{
+opacity:0.70;
+-webkit-transition: all 0.5s;
+transition: all 0.5s;
+}
+.thumbnail:hover{
+opacity:1.00;
+box-shadow: 0px 0px 10px #4bc6ff;
+}
+.line{
+margin-bottom: 5px;
+}
+@media screen and (max-width: 770px) {
+.right{
+  float:left;
+  width: 100%;
+}
+}
+/*下半页over*/
+//全部商品页over
