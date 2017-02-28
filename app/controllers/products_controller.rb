@@ -52,6 +52,12 @@ class ProductsController < ApplicationController
     @products = Product.where(:category => "配件").paginate(:page => params[:page], :per_page => 5)
   end
 
+  def collect
+    @product = Product.find(params[:id])
+    flash[:notice] = "已添加宝贝到收藏夹"
+    redirect_to :back
+  end
+
 
   protected
 

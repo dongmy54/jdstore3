@@ -19,6 +19,7 @@ resources :products do
   resources :comments 
 	  member do
 		  post :add_to_cart
+      post :collect
 		end
     collection do
       get :search
