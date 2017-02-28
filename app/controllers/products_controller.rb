@@ -54,8 +54,13 @@ class ProductsController < ApplicationController
 
   def collect
     @product = Product.find(params[:id])
-    flash[:notice] = "已添加宝贝到收藏夹"
-    redirect_to :back
+    @collection = Collection.new
+       @collection.user = current_user
+       @collection.product_id = @product
+       if @collection.save
+         flash[:notice] = "已添加宝贝到收藏夹"
+         redirect_to :back
+       end
   end
 
 
