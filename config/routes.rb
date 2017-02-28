@@ -51,6 +51,6 @@ resources :products do
     namespace :account do
     	resources :orders
     end
-
+   resources :collections
 
 end

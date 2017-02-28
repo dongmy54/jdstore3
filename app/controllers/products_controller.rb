@@ -54,13 +54,19 @@ class ProductsController < ApplicationController
 
   def collect
     @product = Product.find(params[:id])
+    @products = current_user.products
+    if @products.include?(@product)
+        flash[:warning] = "亲，不能重复添加宝贝哦！"
+        redirect_to :back
+    else
     @collection = Collection.new
        @collection.user = current_user
-       @collection.product_id = @product
+       @collection.product = @product
        if @collection.save
          flash[:notice] = "已添加宝贝到收藏夹"
          redirect_to :back
        end
+     end
   end
 
 

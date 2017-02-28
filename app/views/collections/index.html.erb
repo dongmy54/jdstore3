@@ -1,0 +1,53 @@
+
+   <div class="container">	 
+    
+    <h3 style="margin-top: 40px;">亲，收藏的商品都赶来了！</h3>
+	 <table class="table table-bordered">
+			<thead>
+				<tr>
+					<th> 商品资讯 </th>
+					<th>名称</th>
+					<th>单价</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+				<% @products.each do |product| %>
+				<tr>
+					<td>
+						<%= link_to product_path(product) do %>
+    				   		<%= image_tag(product.photos[0].image.thumb.url, class: "thumbnail") %>
+
+						<% end %>
+					</td>
+                  <td>
+                  	<%= link_to(product.title, product_path(product)) %>
+                  </td>
+                  <td>
+                  	<%= product.price %>
+                  </td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+
+		<br>
+
+		<div class="total clearfix">
+			<span class="pull-right">
+				<span style="font-size: 20px;"> 
+                
+				<% sum = 0 %>
+			    <% @products.each do |product| %>
+				<% sum = sum + product.price %>
+				<% end %>
+				总计  <span style="color: red"><%= sum %></span> RMB 
+				</span>
+			</span>
+		</div>
+   </div>
+
+
+
+
+	

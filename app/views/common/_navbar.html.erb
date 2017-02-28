@@ -54,8 +54,8 @@
 
         <ul class="nav navbar-nav navbar-right">
            <li>
-              <%= link_to "#" do %>
-              收藏夹(<%= current_user.collections.count  %>)
+              <%= link_to collections_path do %>
+              收藏夹(<%= collections_count  %>)
               <% end %>
            </li>
 					<li>
