@@ -50,6 +50,34 @@
 		<% end %>
    </div>
 
+<div>
+	<% current_user.collections.each do |collection| %>
+	<%= collection.product.title %>
+	<%= collection.product.price %>
+	<%= image_tag(collection.product.photos[0].image.thumb.url) %>
+	<% end %>
+
+	<% @collections = current_user.collections %>
+	<% @collections.each do |collection| %>
+	<%= collection.product.title %>
+	<% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
