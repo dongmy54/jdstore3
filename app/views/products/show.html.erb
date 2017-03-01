@@ -96,7 +96,7 @@
 
   <% if is_commenter?(@comments) %>
   <%= simple_form_for([@product, @product.comments.build]) do |f| %>
-  <%= f.input :description, label: "添加评论" , class: "form-control"%>
+  <%= f.input :description, label: "添加评论" , class: "form-control" ,placeholder: '亲，来这里留下你的👣吧!' %>
   <%= f.submit "提交", class: "btn btn-info" %>
    <% end %>
    <% else %>
