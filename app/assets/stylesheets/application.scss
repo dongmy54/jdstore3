@@ -584,3 +584,19 @@ margin-bottom: 10px;
 }
 /*下半页over*/
 //全部商品页over
+
+//分页样式
+.sy-pagination>li>a, .sy-pagination>li>span,
+.sy-pagination>li>a.current, .sy-pagination>li>span.current,
+.sy-pagination>li>a:link, .sy-pagination>li>span:link,
+.sy-pagination>li>a:visited, .sy-pagination>li>span:visited,
+.sy-pagination>li>a:hover, .sy-pagination>li>span:hover,
+.sy-pagination>li>a:active, .sy-pagination>li>span:active,
+.sy-pagination>li>a:focus, .sy-pagination>li>span:focus,
+{
+  border-radius: 50% !important;
+  margin: 0 5px;
+  color: #ed4c1c;
+  background: white;
+}
+//分页样式over

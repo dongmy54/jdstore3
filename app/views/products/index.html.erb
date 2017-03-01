@@ -34,7 +34,7 @@
 								<i class="fa fa-heart"> </i>收藏
 								<% end %>
 							</div>
-							<div class="col-md-3.5">
+							<div class="col-md-4">
 								<%= link_to(add_to_cart_product_path(product), :method => :post, :class => "link") do %>
                     <i class="fa fa-shopping-cart"> </i>购买
 								<% end %>
@@ -47,6 +47,6 @@
   </div>
 <!-- 下半页over	 -->
 <div class="text-center">
-	<%= will_paginate(@products,:prev_label => '上一页',:next_label => '下一页',renderer: BootstrapPagination::Rails) %>
+	<%= will_paginate(@products,:class => 'sy-pagination',:previous_label => '<',:next_label => '>',renderer: BootstrapPagination::Rails) %>
 </div>
 </div>
