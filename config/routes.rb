@@ -19,6 +19,7 @@ resources :products do
   resources :comments 
 	  member do
 		  post :add_to_cart
+      post :collect
 		end
     collection do
       get :search
@@ -50,6 +51,6 @@ resources :products do
     namespace :account do
     	resources :orders
     end
-
+   resources :collections
 
 end
