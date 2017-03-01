@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users, controllers: { 
+
+    passwords: 'users/passwords',
+   registrations: 'users/registrations',   
+    sessions: 'users/sessions' }
+    
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 root 'welcome#index'
+
+mount RuCaptcha::Engine => "/rucaptcha"
 
 namespace :admin do
 	resources :products

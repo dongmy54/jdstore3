@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Website CSS style -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&subset=latin-ext,vietnamese" rel="stylesheet">
+		<!-- Website Font style -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		<link rel="stylesheet" href="form1.css">
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext" rel="stylesheet">
+
+		<title>MegaMenu Design</title>
+	  </head>
+
+	<body>
+    <div class="x-hidden">
+    <img src="https://ww4.sinaimg.cn/large/006tNbRwgy1fd1zjfmc29j315o0m87db.jpg" />
+    <div class="container signup-hero">
+		<div class="col-sm-8 col-sm-offset-2 main">
+		<div class="col-sm-6 left-side">
+		<h1>你好<br>ILIFER</h1>
+		<p>ILIFE是一家提供各类优质办公、生活用品的公司。我们的理念是：完美的人生=愉悦的工作+舒心的生活！赶快加入我们，成为ILIFER的一员吧！</p>
+		</div><!--col-sm-6-->
+
+		<div class="col-sm-6 right-side">
+		<h1>注册</h1>
+		<p>没有账号? 不用一分钟，马上创建您的账号</p>
+
+<!--Form with header-->
+<div class="form">
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+ <div class="form-inputs">
+   <%= f.input :email, required: true, autofocus: true, :label => "注册邮箱：" %>
+   <%= f.input :password, required: true, :label => "密码：" %>
+   <small>（密码最少6个字符）</small>
+   <%= f.input :password_confirmation, required: true, :label => "确认密码：" %>
+ </div>
+ <%= rucaptcha_image_tag(alt: 'Captcha') %>
+<%= rucaptcha_input_tag(class: 'form-control', placeholder: '请输入验证码') %>
+  <br>
+ <div class="form-actions" style="text-align: center;">
+   <%= f.button :submit, "注册" %>
+ </div>
+<% end %>
+</div>
+<!--/Form with header-->
+
+		</div><!--col-sm-6-->
+
+  </div><!--col-sm-8-->
+</div><!--container-->
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="form1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
