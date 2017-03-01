@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
  before_action :authenticate_user! , only: [:collect]
 
  def index
- 	@products = Product.all
+ 	@products = Product.all.paginate(:page => params[:page], :per_page => 8 )
  end
 
  def show
@@ -26,32 +26,32 @@ class ProductsController < ApplicationController
   def search
     if @query_string.present?
       search_result = Product.ransack(@search_criteria).result(:distinct => true)
-      @products = search_result.paginate(:page => params[:page], :per_page => 5 )
+      @products = search_result.paginate(:page => params[:page], :per_page => 8 )
     end
   end
 
   def bgs
-    @products = Product.where(:category => "办公室").paginate(:page => params[:page], :per_page => 5)
+    @products = Product.where(:category => "办公室").paginate(:page => params[:page], :per_page => 8)
   end
 
   def kt
-    @products = Product.where(:category => "客厅").paginate(:page => params[:page], :per_page => 5)
+    @products = Product.where(:category => "客厅").paginate(:page => params[:page], :per_page => 8)
   end
 
   def cc
-    @products = Product.where(:category => "餐厨").paginate(:page => params[:page], :per_page => 5)
+    @products = Product.where(:category => "餐厨").paginate(:page => params[:page], :per_page => 8)
   end
 
   def ws
-    @products = Product.where(:category => "卧室").paginate(:page => params[:page], :per_page => 5)
+    @products = Product.where(:category => "卧室").paginate(:page => params[:page], :per_page => 8)
   end
 
   def zmhdzcp
-    @products = Product.where(:category => "照明和电子产品").paginate(:page => params[:page], :per_page => 5)
+    @products = Product.where(:category => "照明和电子产品").paginate(:page => params[:page], :per_page => 8)
   end
 
   def pj
-    @products = Product.where(:category => "配件").paginate(:page => params[:page], :per_page => 5)
+    @products = Product.where(:category => "配件").paginate(:page => params[:page], :per_page => 8)
   end
 
   def collect

@@ -45,6 +45,8 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'seo_helper'
 
+gem 'devise-i18n'
+
 gem 'hamlit'
 
 group :development, :test do
