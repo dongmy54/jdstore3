@@ -587,7 +587,7 @@ margin-bottom: 10px;
 
 //分页样式
 .sy-pagination>li>a, .sy-pagination>li>span,
-.sy-pagination>li>a.current, .sy-pagination>li>span.current,
+.sy-pagination>li>a.current_page, .sy-pagination>li>span.current_page,
 .sy-pagination>li>a:link, .sy-pagination>li>span:link,
 .sy-pagination>li>a:visited, .sy-pagination>li>span:visited,
 .sy-pagination>li>a:hover, .sy-pagination>li>span:hover,
@@ -598,5 +598,9 @@ margin-bottom: 10px;
   margin: 0 5px;
   color: #ed4c1c;
   background: white;
+}
+.sy-pagination .current{
+  border-bottom:2px solid #3B5998;
+  border-color:#3B5998;
 }
 //分页样式over
