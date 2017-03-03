@@ -98,14 +98,14 @@
   border-style: none;//导航栏边框效果
 }
 .navbar-default .navbar-nav>li>a {
-    color: white; //导航栏文字默认颜色
+    color: rgb(237,76,28); //导航栏文字默认颜色
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus,
 .navbar-default .navbar-nav > li.active > a,
 .navbar-default .navbar-nav > li.active > a:hover,
 .navbar-default .navbar-nav > li.active > a:focus {
-  color: rgb(237,76,28);//导航栏文字动态颜色 by sunny
+  color: white;//导航栏文字动态颜色 by sunny
 }
 
 #search-id {
@@ -606,13 +606,17 @@ margin-bottom: 10px;
 //分页样式over
 
 //修改首页样式V1
-.bg-1 {
-      background: rgba(68,68,68,0.5);
-      color: #bdbdbd;
-  }
-  .bg-1 h3 {color: #fff;}
-  .bg-1 p {font-style: italic;}
+.sy a{
+  color: #ed4c1c;
+}
   /*店主推荐*/
+  .bg-1 {
+        background: rgba(241,241,241,0);
+        color: #bdbdbd;
+    }
+  .bg-1 h1 {
+    font-size: 50px;
+    color: #ed4c1c;}
   .featurette-divider {
     margin: 80px 0; /* Space out the Bootstrap <hr> more */
   }
@@ -622,6 +626,7 @@ margin-bottom: 10px;
     font-weight: 300;
     line-height: 1;
     letter-spacing: -1px;
+    color: #333333;
   }
   /* 更多推荐 */
   .carousel-inner.onebyone-carosel { margin: auto; width: 90%; }
