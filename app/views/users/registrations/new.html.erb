@@ -14,6 +14,13 @@
 		<title>MegaMenu Design</title>
 	  </head>
 
+     <style type="text/css">
+	  .btn:hover {
+      background-color:#393939 !important;
+     }  
+
+	  </style>
+
 	<body>
     <div class="x-hidden">
     <img src="https://ww4.sinaimg.cn/large/006tNbRwgy1fd1zjfmc29j315o0m87db.jpg" />
@@ -43,7 +50,7 @@
 <%= rucaptcha_input_tag(class: 'form-control', placeholder: '请输入验证码') %>
   <br>
  <div class="form-actions" style="text-align: center;">
-   <%= f.button :submit, "注册" %>
+ <%= f.submit "注册", class: "btn btn-primary",:style => "border: none;color:white;width:100%;background-color:#584b4f;border-radius:50px;font-size:16px;" %>
  </div>
 <% end %>
 </div>
