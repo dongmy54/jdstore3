@@ -604,3 +604,46 @@ margin-bottom: 10px;
   border-color:#3B5998;
 }
 //分页样式over
+
+//修改首页样式V1
+.bg-1 {
+      background: rgba(68,68,68,0.5);
+      color: #bdbdbd;
+  }
+  .bg-1 h3 {color: #fff;}
+  .bg-1 p {font-style: italic;}
+  /*店主推荐*/
+  .featurette-divider {
+    margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  }
+
+  /* Thin out the marketing headings */
+  .featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  /* 更多推荐 */
+  .carousel-inner.onebyone-carosel { margin: auto; width: 90%; }
+  .onebyone-carosel .active.left { left: -33.33%; }
+  .onebyone-carosel .active.right { left: 33.33%; }
+  .onebyone-carosel .next { left: 33.33%; }
+  .onebyone-carosel .prev { left: -33.33%; }
+  .right{
+    float: right;
+    border: none;
+  }
+  /* 关于ilife */
+
+    .logo-small {
+        color: #f4511e;
+        font-size: 50px;
+    }
+    @media screen and (max-width: 768px) {
+      .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+      }
+    }
+
+//修改首页样式V1-over
