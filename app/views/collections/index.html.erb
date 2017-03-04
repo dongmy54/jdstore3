@@ -107,9 +107,14 @@ border-color: #483C32;
 
 .btn-danger {
 color: #fff;
-background-color: #FF0000;
+background-color: #ea4a1c;
 border-color: #dc4022;
 }
+
+.add-to-cart .btn:hover
+{
+background-color:red !important;
+}  
 
 </style>
 <div class="container">
@@ -138,28 +143,30 @@ border-color: #dc4022;
 	<div class="product-image">
 	    <% if product.photos.present? %>
 
-		               <%= link_to product_path(product) do %>
-    				   		<%= image_tag(product.photos[0].image.thumb.url) %>     
+		         <%= link_to product_path(product) do %>
+    			 <%= image_tag(product.photos[0].image.thumb.url) %>     
+                   <% end %>
+        <% else %>
+                <%= image_tag("http://placehold.it/400x400&text=No Pic") %>
                              <% end %>
-                     <% else %>
-                         <%= image_tag("http://placehold.it/400x400&text=No Pic") %>
-                             <% end %>
-    				   		
-	</div>
+    </div>
+
 	<div class="product-description"><%= product.description %></div>
 	<div class="product-price">
-	 <span style="color: red">	<%= product.price %> </span>
+	        <span style="color: red">	<%= product.price %> </span>
 	</div>
+
 	<div class="product-controller">
 	         <div>
      	     <%= link_to collection_path(product), method: :delete do %>
-               <i class="btn btn-primary fa fa-trash fa-1.5x" ></i>
+              <i class="btn btn-primary fa fa-trash fa-1.5x" ></i>
                </div>
              <% end %>
-             <br>
-             <div>
-              <%= link_to "加入购物车", add_to_cart_product_path(product),  {:style=>'color:#FFFFFF;', :class => "btn btn-danger",:method => :post,} %>
 
+             <br>
+
+             <div class="add-to-cart">
+              <%= link_to "加入购物车", add_to_cart_product_path(product),  {:style=>'color:#FFFFFF;', :class => "btn btn-danger",:method => :post,} %>
 		      </div>
 	</div>
 	

@@ -24,6 +24,41 @@ end
 	redirect_to carts_path
 end
 
+def remove_quantity
+	cart_item = current_cart.cart_items.find_by(product_id: params[:id])
+	if  cart_item.quantity != 0
+		cart_item.quantity  -= 1
+		cart_item.product.quantity += 1
+		cart_item.product.save
+		
+		if cart_item.quantity == 0
+			cart_item.destroy
+			redirect_to carts_path
+		else
+    	cart_item.save
+        redirect_to carts_path
+        end
+	end
+	
+    
+end
+
+def add_quantity
+	   @cart_item = current_cart.cart_items.find_by(product_id: params[:id])
+	   if @cart_item.product.quantity != 0
+		  @cart_item.quantity += 1
+          @cart_item.product.quantity -=1
+          @cart_item.product.save
+	      @cart_item.save
+          redirect_to carts_path
+        else
+          redirect_to carts_path
+        flash[:warning] = "库存不足，火速备货中～"	
+end
+end
+
+
+
 private
 
 def cart_item_params
