@@ -98,14 +98,14 @@
   border-style: none;//导航栏边框效果
 }
 .navbar-default .navbar-nav>li>a {
-    color: white; //导航栏文字默认颜色
+    color: rgb(237,76,28); //导航栏文字默认颜色
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus,
 .navbar-default .navbar-nav > li.active > a,
 .navbar-default .navbar-nav > li.active > a:hover,
 .navbar-default .navbar-nav > li.active > a:focus {
-  color: rgb(237,76,28);//导航栏文字动态颜色 by sunny
+  color: white;//导航栏文字动态颜色 by sunny
 }
 
 #search-id {
@@ -588,7 +588,7 @@ margin-bottom: 10px;
 
 //分页样式
 .sy-pagination>li>a, .sy-pagination>li>span,
-.sy-pagination>li>a.current, .sy-pagination>li>span.current,
+.sy-pagination>li>a.current_page, .sy-pagination>li>span.current_page,
 .sy-pagination>li>a:link, .sy-pagination>li>span:link,
 .sy-pagination>li>a:visited, .sy-pagination>li>span:visited,
 .sy-pagination>li>a:hover, .sy-pagination>li>span:hover,
@@ -600,5 +600,57 @@ margin-bottom: 10px;
   color: #ed4c1c;
   background: white;
 }
+.sy-pagination .current{
+  border-bottom:2px solid #3B5998;
+  border-color:#3B5998;
+}
 //分页样式over
+
+
+//修改首页样式V1
+.sy a{
+  color: #ed4c1c;
+}
+  /*店主推荐*/
+  .bg-1 {
+        background: rgba(241,241,241,0);
+        color: #bdbdbd;
+    }
+  .bg-1 h1 {
+    font-size: 50px;
+    color: #ed4c1c;}
+  .featurette-divider {
+    margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  }
+
+  /* Thin out the marketing headings */
+  .featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+    color: #333333;
+  }
+  /* 更多推荐 */
+  .carousel-inner.onebyone-carosel { margin: auto; width: 90%; }
+  .onebyone-carosel .active.left { left: -33.33%; }
+  .onebyone-carosel .active.right { left: 33.33%; }
+  .onebyone-carosel .next { left: 33.33%; }
+  .onebyone-carosel .prev { left: -33.33%; }
+  .right{
+    float: right;
+    border: none;
+  }
+  /* 关于ilife */
+
+    .logo-small {
+        color: #f4511e;
+        font-size: 50px;
+    }
+    @media screen and (max-width: 768px) {
+      .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+      }
+    }
+
 
