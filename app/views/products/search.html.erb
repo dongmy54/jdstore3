@@ -50,8 +50,8 @@
            <% end %>
           </div>
 <!-- 下半页over	 -->
-    <div class="text-center">
-      <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
-    </div>
+<div class="text-center">
+  <%= will_paginate(@products,:class => 'sy-pagination',:previous_label => '<',:next_label => '>',renderer: BootstrapPagination::Rails) %>
+</div>
   <% end %>
 </div>
