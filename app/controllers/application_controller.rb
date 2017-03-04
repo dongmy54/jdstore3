@@ -8,23 +8,13 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_cart
-  helper_method :is_commenter?
+  # helper_method :is_commenter?
 
   def current_cart
   	  @current_cart ||= find_cart
   end
 
-  def is_commenter?(comments)
-    if current_user.blank?
-      return true
-     else  commenter = comments.find_by_commenter(current_user.email)
-           if commenter.blank?
-              return true
-            else
-            return false
-            end
-    end
-  end
+  
 
   private
 

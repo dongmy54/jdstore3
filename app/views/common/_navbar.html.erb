@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-default" role="navigation">
   <div class="navbar-container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -53,6 +52,11 @@
     </div>
 
         <ul class="nav navbar-nav navbar-right">
+           <li>
+              <%= link_to collections_path do %>
+              收藏夹(<%= collections_count  %>)
+              <% end %>
+           </li>
 					<li>
 	            <%= link_to carts_path do %>
 	            购物车 <i class="fa fa-shopping-cart"> </i>( <%= current_cart.products.count %>)

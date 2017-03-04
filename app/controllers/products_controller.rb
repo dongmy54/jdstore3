@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
  before_action :validate_search_key, only: [:search]
+ before_action :authenticate_user! , only: [:collect]
+
  def index
  	@products = Product.all.paginate(:page => params[:page], :per_page => 8 )
  end
@@ -50,6 +52,23 @@ class ProductsController < ApplicationController
 
   def pj
     @products = Product.where(:category => "配件").paginate(:page => params[:page], :per_page => 8)
+  end
+
+  def collect
+    @product = Product.find(params[:id])
+    @products = current_user.products
+    if @products.include?(@product)
+        flash[:warning] = "亲，不能重复添加宝贝哦！"
+        redirect_to :back
+    else
+    @collection = Collection.new
+       @collection.user = current_user
+       @collection.product = @product
+       if @collection.save
+         flash[:notice] = "已添加宝贝到收藏夹"
+         redirect_to :back
+       end
+     end
   end
 
 

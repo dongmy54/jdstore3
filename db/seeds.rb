@@ -34,7 +34,7 @@ products_description = ["头层牛皮，柔软透气有弹性", "保护好您的
 
 products_prices = [2999, 598, 1590]
 
-products_images = ["public/uploads/product/image/沙发3.jpg", "public/uploads/product/image/椅子3.jpg", "public/uploads/product/image/办公桌3.jpg"]
+products_images = ["public/uploads/product/image/3", "public/uploads/product/image/椅子3.jpg", "public/uploads/product/image/办公桌3.jpg"]
 
 create_jobs = for i in 1..3 do
 Product.create!([title: products[i - 1], description: products_description[i - 1], quantity: rand(0..10), price: products_prices[i - 1], image: File.open(File.join(Rails.root, products_images[rand(0..2)]))])

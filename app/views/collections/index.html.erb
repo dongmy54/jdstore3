@@ -1,0 +1,203 @@
+<style media="screen">
+.c-color-1 {
+	background-color: #72632a;  /*黑浅*/
+}
+
+.c-color-2 {
+	background-color: #FFFFF0;  /*白深*/
+}
+
+.c-color-3 {
+	background-color: #483C32;  /*黑深*/
+}
+
+.c-color-4 {
+	background-color: #FFFDD0;  /*黑深*/
+
+}
+
+.collections {
+	height: 50px;
+	text-align: center;
+	border: 1px solid #e8e8e8;
+	font-weight: 200px;
+	font-size: 16px;
+	
+}
+
+.label-image {
+	width: 48%;
+	line-height: 45px;
+	display: inline-block;
+
+}
+
+.label-price,.label-controller {
+	width: 24%;
+	line-height: 50px;
+	display: inline-block;
+}
+	
+.product {
+	height: 220px;
+	text-align: center;
+	margin-top: 10px;
+	border: 1px solid #e8e8e8;
+}
+
+.product-image {
+	width: 24%;
+	display: inline-block;
+}
+
+.product-image img {
+		margin-top: 5px;
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+    display: inline-block;
+
+}
+
+.product-description {
+	width: 24%;
+	display: inline-block;
+}
+
+.product-price {
+	width: 24%;
+	display: inline-block;
+	line-height: 210px;
+}
+
+.product-controller {
+	width: 24%;
+	display: inline-block;
+}
+
+.empty-collection {
+		 margin-top: 20px;
+		 margin-bottom: 300px;
+
+}
+
+.empty-collection-img{
+	 
+	 display: inline-block;;
+}
+
+.empty-collection-img img {
+	 width: 250px; 
+	 height: 250px;
+	 border-radius: 50px;
+	 /*display: inline-block;;*/
+}
+
+.empty-collection-text {
+    font-size: 25px;
+    color: #2a424b;
+	display: inline-block;
+}
+
+.btn-primary {
+color: #fff;
+background-color: #483C32;
+border-color: #483C32;
+}
+
+.btn-danger {
+color: #fff;
+background-color: #FF0000;
+border-color: #dc4022;
+}
+
+</style>
+<div class="container">
+
+<% if collections_count == 0 %>
+      <div class="empty-collection">
+        <div class="empty-collection-img">
+         <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1488472724668&di=4379460c42bbe456dcf4e5df451b4628&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201511%2F05%2F20151105105131_GwKdC.thumb.700_0.jpeg" / >
+         </div>
+        <div class="empty-collection-text">
+        亲，你还没有收藏的商品哦！<a href="products">去逛逛吧～</a>
+        </div>
+        </div>
+    <% else %>
+
+<h4 style="margin-left: 20px;margin-top: 20px;">宝贝集合啦～</h4>
+<div class="collections c-color-4">
+	<div class="label-image"> 商品</div>
+	<div class="label-price">单价</div>
+	<div class="label-controller">操作</div>
+</div>
+
+      <% @products.each do |product| %>
+
+<div class="product c-color-2">
+	<div class="product-image">
+	    <% if product.photos.present? %>
+
+		               <%= link_to product_path(product) do %>
+    				   		<%= image_tag(product.photos[0].image.thumb.url) %>     
+                             <% end %>
+                     <% else %>
+                         <%= image_tag("http://placehold.it/400x400&text=No Pic") %>
+                             <% end %>
+    				   		
+	</div>
+	<div class="product-description"><%= product.description %></div>
+	<div class="product-price">
+	 <span style="color: red">	<%= product.price %> </span>
+	</div>
+	<div class="product-controller">
+	         <div>
+     	     <%= link_to collection_path(product), method: :delete do %>
+               <i class="btn btn-primary fa fa-trash fa-1.5x" ></i>
+               </div>
+             <% end %>
+             <br>
+             <div>
+              <%= link_to "加入购物车", add_to_cart_product_path(product),  {:style=>'color:#FFFFFF;', :class => "btn btn-danger",:method => :post,} %>
+
+		      </div>
+	</div>
+	
+</div>
+ <br/>
+        
+		<% end %>
+		<% end %>
+		<div class="total clearfix">
+			<span class="pull-right">
+				<span style="font-size: 16px;"> 
+                
+				<% sum = 0 %>
+			    <% @products.each do |product| %>
+				<% sum = sum + product.price %>
+				<% end %>
+				总计:  <span style="color: red;font-size: 20px"><%= sum %></span> RMB 
+				</span>
+			</span>
+		</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
