@@ -1,106 +1,161 @@
-<div class="container">
-<div class="row">
-	<div class="col-md-6">
-		<% if @product.photos.present? %>
-    <div>
-        <div class="tab-content1" style="display: block;margin-top: 30px;">
-          <%= image_tag(@photos[0].image.medium.url, class: "thumbnail") %>
-       </div>
-          <% if @product.photos[3].present? %>
 
-        <div class="tab-content1" style="margin-top: 30px;"><%= image_tag(@product.photos[1].image.medium.url, class: "thumbnail") %></div>
-         <div class="tab-content1" style="margin-top: 30px;"><%= image_tag(@product.photos[2].image.medium.url, class: "thumbnail") %></div>
-          <div class="tab-content1" style="margin-top: 30px;"><%= image_tag(@product.photos[3].image.medium.url, class: "thumbnail") %></div>
-          <% end %>
-   </div>
+  <head>
 
-			<% else %>
-			<%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-      <% end %>
-   <% if @product.photos[3].present? %>
-       <div>
-          <div class="tab-controller"><%= image_tag(@product.photos[0].image.medium.url, class: "thumbnail") %></div>
-          <div class="tab-controller"><%= image_tag(@product.photos[1].image.medium.url, class: "thumbnail") %></div>
-          <div class="tab-controller"><%= image_tag(@product.photos[2].image.medium.url, class: "thumbnail") %></div>
-          <div class="tab-controller"><%= image_tag(@product.photos[3].image.medium.url, class: "thumbnail") %></div>
-      </div>
-      <% else %>
-        <p style="color: red;margin-left: 60px;margin-bottom: 30px;">亲，没有更多详图了哦！</p>
-       <% end %>
- </div>
-	<div class="col-md-6" style="margin-left: -10px">
-       <p style="font-size: 36px;margin-top: 30px;"> <%= @product.title %> </p>
-       <div style="height: 100px;">
-       	<p>
-       		<%= @product.description %>
-       	</p>
-       </div>
-       <div style="font-size: 15px"> 库存    <%= @product.quantity %> 件</div>
-        <br>
-       <div class="product-price" style="font-size: 15px">售价   <span style="font-size: 20px; color: #fc3820;">￥<%= @product.price %></span></div>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title>eCommerce Product Detail</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+	<div class="container">
+		<div >
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="col-md-6 juli2">
+	          <% if @product.photos.present? %>
+	          <div>
+			      <div class="tab-content1" style="display: block;margin-top: 30px;">
+				      <%= image_tag(@photos[0].image.medium.url, class: "thumbnail") %>
+		        </div>
+				      <% if @product.photos[3].present? %>
+
+			      <div class="tab-content1" style="margin-top: 30px;">
+							<%= image_tag(@product.photos[1].image.medium.url, class: "thumbnail") %>
+						</div>
+			      <div class="tab-content1" style="margin-top: 30px;">
+							<img data-toggle="magnify" src=<%= @product.photos[2].image.medium.url %>>
+						</div>
+				    <div class="tab-content1 mag" style="margin-top: 30px;">
+							<img data-toggle="magnify" alt="" src=<%= @product.photos[3].image.medium.url %>>
+						</div>
+				      <% end %>
+            </div>
+
+		          <% else %>
+		          <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+		          <% end %>
+              <% if @product.photos[3].present? %>
+		        <div>
+
+				      <div class="tab-controller"><%= image_tag(@product.photos[0].image.medium.url, class: "thumbnail") %></div>
+				      <div class="tab-controller"><%= image_tag(@product.photos[1].image.medium.url, class: "thumbnail") %></div>
+				      <div class="tab-controller"><%= image_tag(@product.photos[2].image.medium.url, class: "thumbnail") %></div>
+				      <div class="tab-controller"><%= image_tag(@product.photos[3].image.medium.url, class: "thumbnail") %></div>
+		        </div>
+		           <% else %>
+			         <p style="color: red;margin-left: 60px;margin-bottom: 30px;">亲，没有更多详图了哦！</p>
+		           <% end %>
+            </div>
+
+					<div class="details col-md-6 juli1">
+						<h3 class="product-title"> <%= @product.title %></h3>
+						<div class="rating">
+							<div class="stars">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+							<span class="review-no">41 reviews</span>
+						</div>
+						<p class="product-description"><%= @product.description %></p>
+						<h4 class="price">售价: <span>￥<%= @product.price %></span></h4>
+						<p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+						<br><br><br><br>
+						<div class="action">
+							<%= link_to(add_to_cart_product_path(@product), :method => :post, :class => "link") do %>
+							<button class="add-to-cart btn btn-default" type="button"><span class="fa fa-shopping-cart"> </span>加入购物车</button>
+							<% end %>
+							<%= link_to collect_product_path(@product), method: :post do %>
+							<button class="like btn btn-default" type="button"><span class="fa fa-heart"></span>加入收藏夹</button>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
       <br>
+			<!--商品描述部分-->
+			<div class="container-fluid">
+					<div class="col-md-12 product-info">
+							<ul id="myTab" class="nav nav-tabs nav_tabs">
+								<li class="active"><a href="#service-one" data-toggle="tab">商品详情</a></li>
+								<li><a href="#service-two" data-toggle="tab">商品评价(<%= @product.comments.count %>)</a></li>
+							</ul>
+						<div id="myTabContent" class="tab-content">
+								<div class="tab-pane fade in active" id="service-one">
+									<section class="container product-info">
+										<p class="product-description" style="margin-top: 15px;"><%= @product.description %></p>
+			               <% if @product.photos.present? %>
+			               <% @product.photos.each do |p| %>
+			               <%= image_tag p.image.url %><br />
+			               <% end %>
+			               <% end %>
+									</section>
+								</div>
+							<div class="tab-pane fade" id="service-two">
+								<section class="container">
+									<p style="font-size: 25px;margin-top: 20px;">商品评论(<%= @product.comments.count %>)</p>
+									<hr>
+										<% @comments.each do |comment| %>
+									 <div class="comment-commenter ">
+									 <p style="float: left;font-weight: bold;"><%= comment.commenter %></p>
+									 <p style="margin-left: 50px;float: left;"><%= comment.created_at.localtime %></p>
+									 </div>
+									 <div class="comment-description" >
+											 <p style="background-color: #f1f1f1;"> <%= comment.description %></p>
+									 </div>
 
-     <%= link_to collect_product_path(@product), :class => "like btn btn-default",method: :post do %>
-                    <i class="fa fa-heart" aria-hidden="true">    收藏宝贝</i>
-                    <% end %>
+									 <hr>
+									 <% end %>
 
-       <div class="pull-right">
-       <% if @product.quantity.present? && @product.quantity > 0 %>
-       	    <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
-                  <% else %>
-                  已销售一空， 无法购买
-                  <% end %>
-       </div>
-      <p style="margin-top: 10px; font-size: 15px;">首单立减<span style="color: #fc3820">500</span></p>
+									 <% if is_commenter?(@comments) %>
+									 <%= simple_form_for([@product, @product.comments.build]) do |f| %>
+									 <%= f.input :description, label: "添加评论" , class: "form-control" ,placeholder: '亲，来这里留下你的👣吧!' %>
+									 <%= f.submit "提交", class: "btn btn-info" %>
+										<% end %>
+										<% else %>
+										<p style="font-weight: bold;font-size: 20px;"><span style="font-size: 25px;">🙏</span>感谢你的留言，我们正在不断完善中！</p>
+										<% end %>
+		              </section>
+		          </div>
+		         </div>
+						</div>
+						<hr>
+					</div>
+		<!--商品描述部分over-->
+
+		</div>
 	</div>
-</div>
+  </body>
 
-<!--商品描述部分-->
-<div>
-   <ul class="tab">
-         <li>
-           <a href="#tab-default-1">商品详情</a>
-         </li>
-         <li>
-        <a href="#comments">商品评价(<%= @product.comments.count %>)</a>
-         </li>
-   </ul>
+	<div class="row">
 
-<div id="tab-default-1">
-  <p class="product-description" style="margin-top: 15px;"><%= @product.description %></p>
-     <% if @product.photos.present? %>
-               <% @product.photos.each do |p| %>
-                <%= image_tag p.image.url %><br />
-                <% end %>
-             <% end %>
-</div>
-</div>
+        <div class="col-md-4">
+            <div class="mag">
+                iPhone<br>
+                <img data-toggle="magnify" src="http://i.imgur.com/1fgr2IO.jpg" alt="">
+            </div>
+        </div><!--/span-->
 
 
-<div id="comments" class="comment-title">
-  <p style="font-size: 25px;margin-top: 20px;">商品评论(<%= @product.comments.count %>)</p>
-  </div>
- <hr>
-   <% @comments.each do |comment| %>
-  <div class="comment-commenter ">
-  <p style="float: left;font-weight: bold;"><%= comment.commenter %></p>
-  <p style="margin-left: 50px;float: left;"><%= comment.created_at.localtime %></p>
-  </div>
-  <div class="comment-description" >
-      <p style="background-color: #f1f1f1;"> <%= comment.description %></p>
-  </div>
+        <div class="col-md-4">
+            <div class="mag">
+                Lion<br>
+                <img data-toggle="magnify" src="http://i.imgur.com/kzGVqbd.jpg" alt="">
+            </div>
+        </div><!--/span-->
 
-  <hr>
-  <% end %> 
+        <div class="col-md-4">
+            <div class="mag">
+                Mixer<br>
+                <img data-toggle="magnify" src="http://i.imgur.com/YZ7AGyF.jpg" alt="">
+            </div>
+        </div><!--/span-->
 
-  <% if is_commenter?(@comments) %>
-  <%= simple_form_for([@product, @product.comments.build]) do |f| %>
-  <%= f.input :description, label: "添加评论" , class: "form-control" ,placeholder: '亲，来这里留下你的👣吧!' %>
-  <%= f.submit "提交", class: "btn btn-info" %>
-   <% end %>
-   <% else %>
-   <p style="font-weight: bold;font-size: 20px;"><span style="font-size: 25px;">🙏</span>你的留言，我们正在不断完善中！</p>
-   <% end %>
 
-</div>
+    </div><!--/row-->
