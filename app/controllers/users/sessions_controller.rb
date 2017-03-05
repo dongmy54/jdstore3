@@ -23,7 +23,7 @@ class Users::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
   prepend_before_action :valify_captcha!, only: [:create]
-
+ 
   def valify_captcha!
     unless verify_rucaptcha?
       redirect_to new_user_session_path, alert: t('rucaptcha.invalid')
@@ -31,4 +31,6 @@ class Users::SessionsController < Devise::SessionsController
     end
     true
   end
+
+
 end
