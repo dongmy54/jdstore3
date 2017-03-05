@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore</title>
+    <title>iKnew - For your health and more active life </title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,12 +9,11 @@
   </head>
 
   <body>
-
-         <div class="container-fluid">
-         	<%= render "common/navbar" %>
-          <%= render "common/flashes" %>
-         	    <%= yield %>
-         </div>
-         <%= render "common/footer" %>
+    <div class="container-fluid">
+        <%= render "common/navbar" %>
+        <%= render "common/flashes" %>
+        <%= yield %>
+    </div>
+      <%= render "common/footer" %>
   </body>
 </html>

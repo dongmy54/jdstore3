@@ -132,63 +132,10 @@ background-color:red !important;
 
  <h3 ><a href="products" style="color: #483C32;">ILIFI商城</a></h3>
  <% if current_cart.cart_items.present? %>
- 	
-	<div class="carts c-color-4">
-	       <div class="label-image"> 商品信息</div>
-	       <div class="label-price">单价</div>
-	       <div class="label-quantity">数量</div>
-	       <div class="label-subtotal">小计(元）</div>
-	       <div class="label-controller">操作</div>
-   </div>
-          	  <% current_cart.cart_items.each do |cart_item| %>
 
-   <div class="product c-color-2">
-	    <div class="product-image">
-	         <% if cart_item.product.photos.present? %>
+	 <%= render "carts_no_empty" %> 
+             <% else %> 
 
-		              <%= link_to product_path(cart_item.product_id) do %>
-    			      <%= image_tag(cart_item.product.photos[0].image.thumb.url) %>     
-                      <% end %>
-             <% else %>
-                      <%= image_tag("http://placehold.it/400x400&text=No Pic") %>
-             <% end %>
-       </div>
-
-	    <div class="product-description"><%= link_to(cart_item.product.description, product_path(cart_item.product_id) )%></div>
-	    <div class="product-price">
-	       	<%= cart_item.product.price %> </div>
-	    
-	    <div class="product-quantity countNumber">
-             <%= link_to("-", remove_quantity_cart_item_path(cart_item.product), class: "countNumber-btn countNumber-btn-sub", method: :post) %>
-             <input class="countNumber-input" type="text" value="<%= cart_item.quantity %>">
-             <%= link_to("+", add_quantity_cart_item_path(cart_item.product_id), class: "countNumber-btn countNumber-btn-plus", method: :post) %>
-	                   </div>  
-	    <div class="product-subtotal">
-	    	 <span style="color: red"><%= cart_item.product.price * cart_item.quantity %></span>
-	    </div>
-
-	    <div class="product-controller">
-     	      <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
-              <i class="btn btn-primary fa fa-trash fa-1.5x" ></i>
-              <% end %>
-        </div>
-           <% end %>
-   </div>
-	    <div class="total clearfix">
-			   <span class="pull-right" style="margin-top: 20px; font-size: 16px;">
-				
-				总计: <span style="color: red;">  <%= render_cart_total_price(current_cart) %> </span>RMB
-				</span>
-		</div>
-
-		<div class="checkout-carts">
-           <%= link_to "确认结账", checkout_carts_path,  {:style=>'color:#FFFFFF;margin-top:20px;', :class => "btn btn-danger btn-lg pull-right",:method => :post,} %>
-		</div>
-        
-	       
-
-	       <% else %>
-	      
 	        <div class="empty-carts">
                 <div class="empty-carts-img">
                    <img src="https://ooo.0o0.ooo/2017/03/04/58ba58b24f5f1.jpg" / >
@@ -198,9 +145,6 @@ background-color:red !important;
                </div>
             </div>
 
+
 	       <% end %>
-
-	    
-
-   
 </div>
