@@ -113,5 +113,5 @@ IntercomRails.config do |config|
   # config.hide_default_launcher = true
   config.include_for_logged_out_users = true
  
-}
+
 end
