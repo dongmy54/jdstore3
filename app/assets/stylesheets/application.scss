@@ -744,11 +744,12 @@ body {
 }
 /*图片放大*/
 .mag {
-    width:200px;
-    margin: 0 auto;
+    display: none;
+    width:400px;
+    margin: auto;
+    margin-left: inherit;
     float: none;
 }
-
 .mag img {
     max-width: 100%;
 }

@@ -18,19 +18,19 @@
 					<div class="col-md-6 juli2">
 	          <% if @product.photos.present? %>
 	          <div>
-			      <div class="tab-content1" style="display: block;margin-top: 30px;">
-				      <%= image_tag(@photos[0].image.medium.url, class: "thumbnail") %>
+			      <div class="tab-content1 mag" style="display: block;margin-top: 30px;">
+				      <img data-toggle="magnify" src=<%= @product.photos[0].image.url %>>
 		        </div>
 				      <% if @product.photos[3].present? %>
 
-			      <div class="tab-content1" style="margin-top: 30px;">
-							<%= image_tag(@product.photos[1].image.medium.url, class: "thumbnail") %>
+			      <div class="tab-content1 mag" style="margin-top: 30px;">
+							<img data-toggle="magnify" src=<%= @product.photos[1].image.url %>>
 						</div>
-			      <div class="tab-content1" style="margin-top: 30px;">
-							<img data-toggle="magnify" src=<%= @product.photos[2].image.medium.url %>>
+			      <div class="tab-content1 mag" style="margin-top: 30px;">
+							<img data-toggle="magnify" src=<%= @product.photos[2].image.url %>>
 						</div>
 				    <div class="tab-content1 mag" style="margin-top: 30px;">
-							<img data-toggle="magnify" alt="" src=<%= @product.photos[3].image.medium.url %>>
+							<img data-toggle="magnify" src=<%= @product.photos[3].image.url %>>
 						</div>
 				      <% end %>
             </div>
