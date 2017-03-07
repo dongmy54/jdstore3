@@ -82,3 +82,7 @@ end
 group :production do
   gem 'pg'
 end
+
+group :heroku, :production do
+   gem 'rails_12factor', require: !!ENV["HEROKU"]
+  end
