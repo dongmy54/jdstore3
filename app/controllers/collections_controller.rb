@@ -1,6 +1,5 @@
 class CollectionsController < ApplicationController
 	before_action :authenticate_user!
-	protect_from_forgery prepend: true
 
 	def index
 		@products = current_user.products
