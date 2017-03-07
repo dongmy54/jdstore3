@@ -1,4 +1,5 @@
 class Users::SessionsController < Devise::SessionsController
+  skip_before_filter :verify_authenticity_token, :only => :create
 
 # before_action :configure_sign_in_params, only: [:create]
 
