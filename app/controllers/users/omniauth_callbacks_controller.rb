@@ -1,4 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  protect_from_forgery prepend: true
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]
 

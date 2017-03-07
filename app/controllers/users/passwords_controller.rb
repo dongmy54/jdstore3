@@ -1,4 +1,5 @@
 class Users::PasswordsController < Devise::PasswordsController
+  protect_from_forgery prepend: true
   # GET /resource/password/new
   # def new
   #   super
