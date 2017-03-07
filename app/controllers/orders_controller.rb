@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
     before_action :authenticate_user!, only: [:create]
+      protect_from_forgery prepend: true
 
 def create
     @order = Order.new(order_params)
