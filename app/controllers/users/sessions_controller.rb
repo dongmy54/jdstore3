@@ -1,5 +1,6 @@
 class Users::SessionsController < Devise::SessionsController
 # before_action :configure_sign_in_params, only: [:create]
+  skip_before_filter :verify_authenticity_token, :only => :create
 
   # GET /resource/sign_in
   # def new
@@ -22,7 +23,7 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
-  #prepend_before_action :valify_captcha!, only: [:create]
+  prepend_before_action :valify_captcha!, only: [:create]
  
   def valify_captcha!
     unless verify_rucaptcha?
