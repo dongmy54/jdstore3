@@ -11,7 +11,7 @@ root 'welcome#index'
 mount RuCaptcha::Engine => "/rucaptcha"
 
 namespace :admin do
-	resources :products
+  resources :products
     resources :orders do
         member do
             post :cancel
@@ -24,10 +24,10 @@ end
 
 resources :products do
   resources :comments 
-	  member do
-		  post :add_to_cart
+    member do
+      post :add_to_cart
       post :collect
-		end
+    end
     collection do
       get :search
       get :bgs
@@ -37,14 +37,14 @@ resources :products do
       get :zmhdzcp
       get :pj
     end
-	end
+  end
 
-	resources :carts do
-		collection do
-			delete :clean
-			post :checkout
-		end
-	end
+  resources :carts do
+    collection do
+      delete :clean
+      post :checkout
+    end
+  end
 
     resources :cart_items do
       member do
@@ -54,15 +54,15 @@ resources :products do
     end
     
     resources :orders do
-    	member do
-    		post :pay_with_alipay
-    		post :pay_with_wechat
+      member do
+        post :pay_with_alipay
+        post :pay_with_wechat
             post :apply_to_cancel
-    	end
+      end
     end
 
     namespace :account do
-    	resources :orders
+      resources :orders
     end
    resources :collections
 
