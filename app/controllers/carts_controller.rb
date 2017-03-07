@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-protect_from_forgery prepend: true
+
 def clean
 	
 	current_cart.clean!

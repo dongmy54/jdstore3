@@ -1,5 +1,4 @@
 class Users::ConfirmationsController < Devise::ConfirmationsController
-  protect_from_forgery prepend: true
   # GET /resource/confirmation/new
   # def new
   #   super
