@@ -1,4 +1,5 @@
 class Users::UnlocksController < Devise::UnlocksController
+  protect_from_forgery prepend: true
   # GET /resource/unlock/new
   # def new
   #   super
