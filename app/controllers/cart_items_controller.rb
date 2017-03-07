@@ -1,5 +1,5 @@
 class CartItemsController < ApplicationController
-
+protect_from_forgery prepend: true
 def destroy
 	@cart = current_cart
 	@cart_item = @cart.cart_items.find_by(product_id: params[:id])

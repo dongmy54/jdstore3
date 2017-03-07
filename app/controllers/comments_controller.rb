@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 	before_action :authenticate_user!
+	protect_from_forgery prepend: true
 	def create
 		@product = Product.find(params[:product_id])
 		@comment = Comment.new(comment_params)
