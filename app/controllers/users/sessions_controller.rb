@@ -21,16 +21,16 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
-  prepend_before_action :valify_captcha!, only: [:create]
-   protect_from_forgery prepend: true
+  # prepend_before_action :valify_captcha!, only: [:create]
+  #  protect_from_forgery prepend: true
 
-  def valify_captcha!
-    unless verify_rucaptcha?
-      redirect_to new_user_session_path, alert: t('rucaptcha.invalid')
-      return
-    end
-    true
-  end
+  # def valify_captcha!
+  #   unless verify_rucaptcha?
+  #     redirect_to new_user_session_path, alert: t('rucaptcha.invalid')
+  #     return
+  #   end
+  #   true
+  # end
 
 
 end
