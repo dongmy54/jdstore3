@@ -1,4 +1,28 @@
+<div class="container">
 <h2> 订单列表</h2>
+
+<%= link_to("回到首页",hudd_path(:b => 1, :a => 2, :c => 3)) %>
+
+<h3><%= link_to( "test", hu_test_path("123")) %></h3>
+<%= cookies[:dongmy] %>
+<%= session[:foobar] %>
+<%= form_tag account_orders_path , :method => "get" do %>
+
+  <%= label_tag :total %>
+   <%= text_field_tag :total %>
+  
+   <%= label_tag :ids %>
+   <%= text_field_tag :ids %>
+
+   <%= label_tag :date %>
+   <%= date_field_tag :date %>
+   <%= submit_tag :"Submit" %>
+<% end %>
+<%= link_to("尝试", new_apple_url) %>
+<%= link_to "order_placed", account_orders_path(:status => "order_placed") %>
+<%= link_to "paid", account_orders_path(:status => "paid") %>
+<%= link_to("all_order", account_orders_path) %>
+<%= link_to("pending", account_orders_path(:pending => "pending")) %>
 
 <table class="table table-bordered">
 	<thead>
@@ -22,3 +46,4 @@
 		<% end %>
 	</tbody>
 </table>
+</div>

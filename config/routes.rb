@@ -10,6 +10,7 @@ root 'welcome#index'
 
 mount RuCaptcha::Engine => "/rucaptcha"
 
+#scope :module => "xxx", :as => "yyy", :path => "zzz" do
 namespace :admin do
   resources :products
     resources :orders do
@@ -64,6 +65,23 @@ resources :products do
     namespace :account do
       resources :orders
     end
+
    resources :collections
 
+   resources :tests do
+    collection do
+      get :yu
+       end
+      member do
+        post :hu
+    end
+  end
+
+  get "/welcome/:a/:b/:c" => "welcome#index", :as => "hudd"
+
+  resources :apple do
+    collection do
+      post :eds
+    end
+  end 
 end

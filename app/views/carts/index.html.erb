@@ -184,8 +184,10 @@ background-color:red !important;
 		</div>
 
 		<div class="checkout-carts">
-           <%= link_to "确认结账", checkout_carts_path,  {:style=>'color:#FFFFFF;margin-top:20px;', :class => "btn btn-danger btn-lg pull-right",:method => :post,} %>
-		</div>
+            <%= link_to "确认结账", checkout_carts_path, 
+                   {:class => 'btn btn-danger btn-lg pull-right',
+                   style: 'color:#FFFFFF;margin-top:20px;',
+                   :method => :post}%>
              <% else %> 
 
 	        <div class="empty-carts">
@@ -193,7 +195,7 @@ background-color:red !important;
                    <img src="https://ooo.0o0.ooo/2017/03/04/58ba58b24f5f1.jpg" / >
                </div>
                <div class="empty-carts-text">
-               亲，你的购物车还是空的，<a href="products">去逛逛吧～</a>
+               亲，你的购物车还是空的，<a href="/">去逛逛吧～</a>
                </div>
             </div>
 
