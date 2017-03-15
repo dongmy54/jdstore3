@@ -1,5 +1,7 @@
 class CartsController < ApplicationController
 
+
+
 def clean
 	
 	current_cart.clean!

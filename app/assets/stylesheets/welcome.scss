@@ -1,4 +1,13 @@
 
+html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0; 
+            padding: 0;
+        }
+/* I wangt clean css default style */
+
+
 <!--slider-->
 .jk-slider{
     width:100%;
@@ -50,3 +59,255 @@
          -o-transition: 2s all ease-in-out .1s;
             transition: 2s all ease-in-out .1s;
 }
+
+/* landding color*/
+
+.color-lp-1 {
+  background: #584b4f;    /*咖啡1*/
+}
+
+.color-lp-2 {
+  background-color: #fff;   /*纯白*/
+}
+
+.color-lp-3 {
+  background-color: #faf6ec;   /*浅黄*/
+}
+
+.color-lp-4 {
+  background-color: #483C32;   /*咖啡2*/
+}
+
+.color-lp-4 {
+  background: #f6f6f6;   /*浅灰*/
+}
+
+/* color end */
+
+
+/* ilife-big-piture */
+.ilife-img img {
+    width: 100%;
+    opacity: 0.8;
+    height: 100%;
+}
+
+.whole {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+    .dream {
+    margin-top: -40%;
+    position: absolute;
+    z-index:10;
+    margin-left: 50%;
+    font-size: 3vw;
+    color: #393f4c;
+    .btn-default{
+    background-color: #483C32;
+    color: #fff;
+    position: relative;
+    margin-left: 26%;
+    margin-top: 30px;
+    }
+    }
+
+    .dream-span {
+      margin-top: 40px;
+      padding-right: 40px;
+      font-size: 4vw;
+      font-weight: 800;
+    }
+
+/* big piture end*/
+
+
+
+/* introduction start*/
+.introduction {
+  text-align: center;
+  background: #f6f6f6;
+  padding-top: 45px;
+  padding-bottom: 30px;
+}
+
+.intr-text {
+ font-size: 20px;
+ font-weight: 600;
+ border-bottom: 2px solid;
+ padding-bottom: 10px;
+}
+
+.intr-text-1 {
+ color: #f6f6f6;
+ font-size: 18px;
+ border-bottom: 2px solid #483C32;
+ padding-bottom: 10px;
+}
+
+.col-xs-12.col-sm-4.col-md-4.col-lg-4 img{
+  width: 100%;
+  height: 100%;
+}
+
+.introduction-text {
+  background-color: #faf6ec;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.introduction-h-font {
+  color: #584b4f; 
+  margin-top: 0;
+}
+
+.introduction-font-color {
+  color: #584b4f; 
+}
+/* introduction end*/
+
+
+
+/*customer feedback*/
+#customer-feedback {
+  background-color: #fff;
+}
+.round-image-74 {
+    background-color: #fff;
+    border: 1px solid #faf6ec;
+    border-radius: 37px;
+    -moz-border-radius: 37px;
+    -webkit-border-radius: 37px;
+    height: 74px;
+    width: 74px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.module-name.decorative span {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 20px;
+}
+
+.module-name {
+    margin-top: 45px;
+    margin-bottom: 45px;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-size: 0;
+}
+/*customer feedback end*/
+
+
+
+/* call-to-action */ 
+
+#call-to-action {
+  background-color: #faf6ec;
+  margin-top: 50px;
+  padding-top: 40px;
+  padding-bottom: 80px;
+  .btn-default {
+    background: #584b4f;
+    color: #fff;
+    border-color: #fff;
+    padding-top: 8px;
+    width: 150px;
+  }
+  .btn:hover {
+   background-color: #140f11;
+  }
+  p {
+  font-size: 20px;
+  }  
+}
+/* call-to-action end */ 
+
+
+
+/* fqa */
+.fqa {
+  margin-left: 20%;
+  margin-bottom: 150px;
+  .btn-default {
+   background-color: #483C32;
+  }
+
+  a {
+  color: #fff;
+  font-size: 14px;
+  }
+
+  a:hover {
+  background-color: #fff;
+  color: #483c32;
+  }
+}
+
+.question, .character-a {
+  font-size: 20px;
+}
+
+.answer {
+  font-size: 14px;
+}
+/* fqa end */
+
+/* contact_us */
+#contact_us {
+  margin-bottom: 100px; 
+}
+
+.pic-contact {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.pic-contact img {
+  width: 100%;
+}
+
+.about_us {
+  width: 350px;
+  height: 200px;
+  margin-left: 100px;
+  margin-right: 20px;
+  border: 2px soild #483c32;
+  float: left;
+}
+
+.contact-item {
+  font-size: 18px;
+}
+
+.contact-item a{
+  color: black;
+}
+.contact-item img{
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.wechat-p img {
+  width: 150px;
+  height: 150px;
+}
+
+.dividing-line {
+  border-left: 2px solid #483C32;
+}
+/* contact_us end */
+
+
+
+
+
+
+
+
+
+
+

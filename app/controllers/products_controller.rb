@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
  before_action :validate_search_key, only: [:search]
- before_action :authenticate_user! , only: [:collect]
+ before_action :authenticate_user! , only: [:collect,:add_to_cart]
 
  def index
  	@products = Product.all.paginate(:page => params[:page], :per_page => 8 )

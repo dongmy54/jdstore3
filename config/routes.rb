@@ -61,9 +61,18 @@ resources :products do
       end
     end
 
+
     namespace :account do
       resources :orders
     end
    resources :collections
 
+   resources :welcome do
+    collection do
+      get :shopping_directory
+    end
+  end
+
+  get 'shopping_directory' => 'welcome#shopping_directory'
+  get 'contact_us' => 'welcome#contact_us'
 end

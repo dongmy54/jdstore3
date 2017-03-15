@@ -26,7 +26,7 @@
 .nav-list > li:last-child { border-right: 0px solid #eee; }
 .nav-list > li > a:hover { font-size:110%; text-decoration: none; }//文字放大效果
 .nav-list > li > a > span {
-  color:#444;//改文字颜色
+  color: #483C32;//改文字颜色
   display: block;
   font-weight: bold;
   text-transform: uppercase;
@@ -71,8 +71,8 @@
 /* 类别部分over */
 .navbar{
   margin-bottom: -5px;
-  margin-left: -20px;
-  margin-right: -20px;
+  margin-left: -15px;
+  margin-right: -15px;
   border-radius: 0;
 }
 .icon-size
@@ -84,8 +84,9 @@
     height: 50px;
     background: no-repeat center center;
     background-size: 50px;
-    padding-top: 7px;
-}
+    padding-top: 6px;
+   }
+
 .navbar-nav {
     padding-left: 15px;
 }
@@ -94,13 +95,13 @@
     padding-left: 0px;//导航栏到窗口左端距离，15改为0
     margin-right: auto;
     margin-left: auto;
-    background-color: rgb(57,57,57);//导航栏背景颜色
+    background-color: #483C32; //导航栏背景颜色
 }
 .navbar-default{
   border-style: none;//导航栏边框效果
 }
 .navbar-default .navbar-nav>li>a {
-    color: rgb(237,76,28); //导航栏文字默认颜色
+    color: #fff; //导航栏文字默认颜色
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus,
@@ -114,12 +115,31 @@
   width: 200px;//搜索框宽度
   padding-top: 7px;//搜索框上下定位
 }
+
+.navbar-default .navbar-nav>li>a:hover {
+    background-color: #fff;
+    color: #483C32;
+}
+.home-icon {
+ height: 100%;
+ width: 100%;
+ margin-top: 4px;
+}
+.home-icon:hover{
+ background-color: black;
+    
+}
 // navbar over
 
 
 // login
-.x-hidden{
-  overflow-x:hidden;
+.x-hidden {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.x-hidden img{
+  width: 100%;
   background-size: cover;
 }
 
@@ -193,33 +213,60 @@ padding:0px;
 /*设置页脚*/
 
  .footer-style {
-  background: #444444;   /*背景颜色*/
+  background: #483C32;   /*背景颜色*/
   font-size: 12px;   /*字体12px*/
-  height: 100px;     /*设置高度*/
   line-height: 14px;      /*设置行高*/
   color: white; /*字体颜色*/
-   margin-top: 100px; /*外边距*/
    text-align: center;  /*文字居中*/
+   margin-left: -15px;
+   margin-right: -15px;
+   padding-bottom: 18px;
    
  }
+
+.footer-end {
+  font-size: 25px;
+  text-align: center;
+  color: #483C32;
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
 
 
 .ul-style {
    list-style-type: none; /*不要列表样式*/
    text-align: center;  /*文字居中*/
+   font-size: 16px;
+   margin-top: 10px;
+   margin-bottom: 20px;
 }
 
 .footer-style a {
     color: white;   /*文字颜色*/
     padding-right: 33px;      /*文字右边加点内边距*/
+    margin-bottom: 10px;
+    margin-top: 10px;
     text-decoration: none; /*不要下划线啦，好丑*/
     list-style-type: none;
 }
 
 .footer-style a:hover {
-  color: #C81623; /*鼠标一上去的时候，字体变成红色*/
+  color: #8EA1F0; /*鼠标一上去的时候，字体变成红色*/
 }
 
+#icon-background {
+  color: #fff;
+  padding-top: 15px;
+  font-size: 16px;
+  .col-md-4 img {
+  width: 52px;
+  height: 52px;
+  margin-top: auto;
+  margin-left: 16%;
+  }
+}
+
+/* footer style end */
 
 /*首页商品*/
 
@@ -253,89 +300,10 @@ padding:0px;
   padding-top:0px;  /*上边距*/
   font-family: Arial ; /*修改整体字体*/
 }
+/* 加底纹结束*/
 
 
 
-
-/*懂你部分*/
-.know-you {
-    font-size: 3rem;
-    text-align: center;
-    letter-spacing: 1.2rem;  /*字间距*/
-    clear: both;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 0px;
-    padding: 10px 0;
-    font-weight: normal;
-    border-top: none;
-    background: #f1f1f1;
-    border-bottom: 1px solid #fff0f0;
-    text-align: center;
-}
-
-.heart {
-  font-size: 4rem;   /*把心变大*/
-}
-
-.lib-panel {
-    margin-bottom: 20Px;
-}
-.lib-panel img {
-    width: 100%;
-    background-color: transparent;
-}
-
-.lib-panel .row,
- .col-md-6 {
-    padding: 0;
-    background-color: #FFFFFF;
-}
-
-
-.lib-panel .lib-row {
-    padding: 0 20px 0 20px;
-}
-
-.lib-panel .lib-row.lib-header {
-    background-color: #FFFFFF;
-    font-size: 20px;
-    padding: 10px 20px 0 20px;
-}
-
-.lib-panel .lib-row.lib-header .lib-header-seperator {
-    height: 2px;
-    width: 26px;
-    background-color: #d9d9d9;
-    margin: 7px 0 7px 0;
-}
-
-.lib-panel .lib-row.lib-desc {
-    position: relative;
-    height: 100%;
-    display: block;
-    font-size: 13px;
-}
-.lib-panel .lib-row.lib-desc a{
-    position: absolute;
-    width: 100%;
-    bottom: 10px;
-    left: 20px;
-}
-
-.row-margin-bottom {
-    margin-bottom: 20px;
-    margin-left: 60px;
-}
-
-.box-shadow {
-    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,.10);
-    box-shadow: 0 0 100px 0 rgba(0,0,0,.10);
-}
-
-.no-padding {
-    padding: 0;
-}
 
 /*商品详情页*/
 
@@ -344,7 +312,7 @@ padding:0px;
     margin: 0px;
     padding: 0;
     overflow: hidden;
-    background-color: #333333;
+    background-color: #483C32;
 }
 
 .tab li {
@@ -502,12 +470,13 @@ padding:0px;
 /*上半页*/
 .spy-body {
 font: 400 1em/1.5 "Neuton";
-background: #444444;
-color: rgba(255, 255, 255, 0.25);//小号文字的颜色
+background: #faf6ec; 
+color: #483C32;//小号文字的颜色
 text-align: center;
 margin: 20px auto;
 width:auto;
 }
+
 .spy-p {
 text-transform: uppercase;
 letter-spacing: .5em;
@@ -518,6 +487,7 @@ padding: 1.5em 0em;
 width: 40em;
 margin: 30px auto;
 }
+
 .spy-p span {
 font: 700 4em/1 "Oswald", sans-serif;
 letter-spacing: 0;
@@ -525,6 +495,7 @@ padding: .25em 0 .325em;
 display: block;
 margin: 0 auto;
 text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+
 /* Clip Background Image */
 background: url(http://likebangla.tk/demo/animated_text_fill.png) repeat-y;//斜边条纹效果
 -webkit-background-clip: text;
