@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
  before_action :authenticate_user! , only: [:collect,:add_to_cart]
 
  def index
- 	@products = Product.all.paginate(:page => params[:page], :per_page => 8 )
+ 	@products = Product.includes(:photos).all.paginate(:page => params[:page], :per_page => 8 )
  end
 
  def show
@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
     else
       flash[:warning] = "你的购物车内已有此物品"
     end
-  redirect_to :back
+      redirect_to :back
   end
 
   def search
@@ -68,7 +68,7 @@ class ProductsController < ApplicationController
          flash[:notice] = "已添加宝贝到收藏夹"
          redirect_to :back
        end
-     end
+    end
   end
 
 

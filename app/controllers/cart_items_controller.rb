@@ -50,7 +50,7 @@ def add_quantity
           @cart_item.product.save
 	      @cart_item.save
           redirect_to carts_path
-        else
+       else
           redirect_to carts_path
         flash[:warning] = "库存不足，火速备货中～"	
        end

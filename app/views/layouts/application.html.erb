@@ -5,7 +5,8 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> 
+
   </head>
 
   <body>
@@ -14,8 +15,7 @@
         <%= render "common/flashes" %>
         <%= yield %>
     </div>
-      <!-- <div class="footer-end">
-        ILIFE商城欢迎您的光临！
-      </div> -->
+     <!--<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>  
+     <%= yield :handwrite_javascript %>-->
   </body>
 </html>
