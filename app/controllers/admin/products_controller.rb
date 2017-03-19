@@ -23,9 +23,9 @@ class Admin::ProductsController < ApplicationController
 
   	if @product.save
   		if params[:photos] != nil
-        params[:photos]['image'].each do |a|
-          @photo = @product.photos.create(:image => a)
-        end
+         params[:photos]['image'].each do |a|
+         @photo = @product.photos.create(:image => a)
+         end
       end
             redirect_to admin_products_path 
 

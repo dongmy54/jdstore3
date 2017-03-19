@@ -9,26 +9,27 @@ class OrderMailer < ApplicationMailer
 	end
 
 	def apply_cancel(order)
-		@order     = order
-		@user      = order.user
+		@order       = order
+		@user        = order.user
 		@product_lists = @order.product_lists
-
 		mail(to: "admin@test.com", subject: "[ILife] 用户#{order.user.email}申请取消订单 #{order.token}")
 	end
 
-	 def notify_ship(order)
-    @order        = order
-    @user         = order.user
-    @product_lists = @order.product_lists
+	def notify_ship(order)
+        @order       = order
+		@user        = order.user
+		@product_lists = @order.product_lists
 
-    mail(to: @user.email, subject: "[ILife] 您的订单 #{order.token}已发货")
-  end
+        mail(to: @user.email, subject: "[ILife] 您的订单 #{order.token}已发货")
+    end
 
-  def notify_cancel(order)
-    @order        = order
-    @user         = order.user
-    @product_lists = @order.product_lists
+    def notify_cancel(order)
+        @order       = order
+		@user        = order.user
+		@product_lists = @order.product_lists
 
-    mail(to: @user.email, subject: "[ILife] 您的订单 #{order.token}已取消")
-  end
+        mail(to: @user.email, subject: "[ILife] 您的订单 #{order.token}已取消")
+    end
+
+   
 end
