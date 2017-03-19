@@ -6,5 +6,5 @@ module OrdersHelper
 		else
 		    "未付款"
     	end
-   end
+    end
 end
