@@ -17,9 +17,9 @@ def update
 	if @cart_item.product.quantity >= cart_item_params[:quantity].to_i
 	@cart_item.update(cart_item_params)
     flash[:notice] = "成功变更数量"
-else
+    else
 	flash[:warning] = "数量不足以加入购物车"
-end
+    end
 	redirect_to carts_path
 end
 
@@ -50,10 +50,10 @@ def add_quantity
           @cart_item.product.save
 	      @cart_item.save
           redirect_to carts_path
-        else
+       else
           redirect_to carts_path
         flash[:warning] = "库存不足，火速备货中～"	
-end
+       end
 end
 
 
