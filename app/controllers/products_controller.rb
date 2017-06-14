@@ -10,8 +10,9 @@ class ProductsController < ApplicationController
  	@product = Product.find(params[:id])
  	@photos = @product.photos.all
   @comments = @product.comments.all
-   set_page_description "#{@product.description}"
+  
 
+  set_page_description "#{@product.description}"
   set_page_title @product.title
  end
 
