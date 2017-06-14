@@ -18,17 +18,10 @@ class Admin::ProductsController < AdminController
   	@product = Product.new(product_params)
 
   	if @product.save
-<<<<<<< HEAD
-  		if params[:photos] != nil
-         params[:photos]['image'].each do |a|
-         @photo = @product.photos.create(:image => a)
-         end
-=======
   		if  params[:photos] != nil
           params[:photos]['image'].each do |a|
           @photo = @product.photos.create(:image => a)
         end
->>>>>>> e3537a776c85857a92c4fc8874e5022aabe78c7d
       end
           redirect_to admin_products_path 
 
@@ -42,8 +35,6 @@ class Admin::ProductsController < AdminController
   end
 
   def update
-
-
   	if params[:photos] != nil
       @product.photos.destroy_all
       params[:photos]['image'].each do |a|
