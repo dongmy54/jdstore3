@@ -14,32 +14,32 @@
 <!-- 下半页	 -->
 	<div class="row">
     	<!-- BEGIN PRODUCTS -->
-			<% @products.each do |product| %>
+		<% @products.each do |product| %>
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail">
-					<%= link_to product_path(product) do %>
+			<%= link_to product_path(product) do %>
 		      <% if product.photos.present? %>
 		        <%= image_tag(product.photos[0].image.thumb.url ) %>
-		       <% else %>
+		      <% else %>
 		        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-		       <% end %>
-			    <% end %>
-          <h4><%= link_to(product.title, product_path(product),:class => "link") %></h4>
-      		<p class="price">￥<%= product.price %></p>
-					<p><%= product.description %></p>
+		      <% end %>
+			<% end %>
+          	<h4><%= link_to(product.title, product_path(product),:class => "link") %></h4>
+      			<p class="price">￥<%= product.price %></p>
+				<p><%= product.description %></p>
       			<hr class="line">
-						<div class="row">
-							<div class="col-md-4">
-								<%= link_to(collect_product_path(product), :method => :post, :class => "link") do %>
+					<div class="row">
+						<div class="col-md-4">
+							<%= link_to(collect_product_path(product), :method => :post, :class => "link") do %>
 								<i class="fa fa-heart"> </i>收藏
-								<% end %>
-							</div>
-							<div class="col-md-4">
-								<%= link_to(add_to_cart_product_path(product), :method => :post, :class => "link") do %>
-                    <i class="fa fa-shopping-cart"> </i>购买
-								<% end %>
-						  </div>
+							<% end %>
 						</div>
+						<div class="col-md-4">
+							<%= link_to(add_to_cart_product_path(product), :method => :post, :class => "link") do %>
+                <i class="fa fa-shopping-cart"> </i>购买
+							<% end %>
+					  </div>
+					</div>
 				</span>
 			</div>
     <% end %>

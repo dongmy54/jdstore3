@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
  before_action :authenticate_user! , only: [:collect,:add_to_cart]
 
  def index
- 	@products = Product.includes(:photos).all.paginate(:page => params[:page], :per_page => 8 )
+ 	@products = Product.includes(:photos).paginate(:page => params[:page], :per_page => 8 )
  end
 
  def show

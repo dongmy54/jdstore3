@@ -2,32 +2,33 @@
 <div class="row">
 	<div class="col-md-6">
 		<% if @product.photos.present? %>
-    <div>
+      <div>
         <div class="tab-content1" style="display: block;margin-top: 30px;">
           <%= image_tag(@photos[0].image.medium.url, class: "thumbnail") %>
-       </div>
-          <% if @product.photos[3].present? %>
-
-        <div class="tab-content1" style="margin-top: 30px;"><%= image_tag(@product.photos[1].image.medium.url, class: "thumbnail") %></div>
-         <div class="tab-content1" style="margin-top: 30px;"><%= image_tag(@product.photos[2].image.medium.url, class: "thumbnail") %></div>
-          <div class="tab-content1" style="margin-top: 30px;"><%= image_tag(@product.photos[3].image.medium.url, class: "thumbnail") %></div>
+        </div>
+            
+          <% if @photos[3].present? %>
+            <% 3.times do |i| %>
+              <div class="tab-content1" style="margin-top: 30px;"><%= image_tag(@photos[i+1].image.medium.url, class: "thumbnail") %></div>
+            <% end %>
           <% end %>
-   </div>
-
-			<% else %>
-			<%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-      <% end %>
-   <% if @product.photos[3].present? %>
-       <div>
-          <div class="tab-controller"><%= image_tag(@product.photos[0].image.medium.url, class: "thumbnail") %></div>
-          <div class="tab-controller"><%= image_tag(@product.photos[1].image.medium.url, class: "thumbnail") %></div>
-          <div class="tab-controller"><%= image_tag(@product.photos[2].image.medium.url, class: "thumbnail") %></div>
-          <div class="tab-controller"><%= image_tag(@product.photos[3].image.medium.url, class: "thumbnail") %></div>
       </div>
-      <% else %>
-        <p style="color: red;margin-left: 60px;margin-bottom: 30px;">亲，没有更多详图了哦！</p>
-       <% end %>
- </div>
+
+		<% else %>
+			<%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+    
+    <% if @photos[3].present? %>
+      <div>
+        <% 4.times do |i| %>
+          <div class="tab-controller"><%= image_tag(@photos[i].image.medium.url, class: "thumbnail") %></div>
+        <% end %>
+      </div> 
+    <% else %>
+      <p style="color: red;margin-left: 60px;margin-bottom: 30px;">亲，没有更多详图了哦！</p>
+    <% end %>
+  </div>
+
 	<div class="col-md-6" style="margin-left: -10px">
        <p style="font-size: 36px;margin-top: 30px;"> <%= @product.title %> </p>
        <div style="height: 100px;">
@@ -57,25 +58,25 @@
 </div>
 
 <!--商品描述部分-->
-<div>
-   <ul class="tab">
-         <li>
-           <a href="#tab-default-1">商品详情</a>
-         </li>
-         <li>
+  <div>
+    <ul class="tab">
+      <li>
+        <a href="#tab-default-1">商品详情</a>
+      </li>
+      <li>
         <a href="#comments">商品评价(<%= @product.comments.count %>)</a>
-         </li>
-   </ul>
+      </li>
+    </ul>
 
-<div id="tab-default-1">
-  <p class="product-description" style="margin-top: 15px;"><%= @product.description %></p>
-     <% if @product.photos.present? %>
-               <% @product.photos.each do |p| %>
-                <%= image_tag p.image.url %><br />
-                <% end %>
-             <% end %>
-</div>
-</div>
+    <div id="tab-default-1">
+      <p class="product-description" style="margin-top: 15px;"><%= @product.description %></p>
+        <% if @photos.present? %>
+          <% @photos.each do |p| %>
+            <%= image_tag p.image.url %><br />
+          <% end %>
+        <% end %>
+    </div>
+  </div>
 
 
 <div id="comments" class="comment-title">

@@ -131,7 +131,7 @@ background-color:red !important;
 <div class="container">
 
  <h3 ><a href="products" style="color: #483C32;">ILIFI商城</a></h3>
- <% if current_cart.cart_items.present? %>
+ <% if @products.present? %>
 
 
 	<div class="carts c-color-4">
@@ -141,13 +141,13 @@ background-color:red !important;
 	       <div class="label-subtotal">小计(元）</div>
 	       <div class="label-controller">操作</div>
    </div>
-    <% current_cart.cart_items.each do |cart_item| %>
+    <% @cart_items.each do |cart_item| %>
 
    <div class="product c-color-2">
 	    <div class="product-image">
 	         <% if cart_item.product.photos.present? %>
 
-		              <%= link_to product_path(cart_item.product_id) do %>
+		              <%= link_to product_path(cart_item.product) do %>
     			      <%= image_tag(cart_item.product.photos[0].image.thumb.url) %>     
                       <% end %>
              <% else %>
@@ -155,21 +155,21 @@ background-color:red !important;
              <% end %>
        </div>
 
-	    <div class="product-description"><%= link_to(cart_item.product.description, product_path(cart_item.product_id) )%></div>
+	    <div class="product-description"><%= link_to(cart_item.product.description, product_path(cart_item.product) )%></div>
 	    <div class="product-price">
 	       	<%= cart_item.product.price %> </div>
 	    
 	    <div class="product-quantity countNumber">
              <%= link_to("-", remove_quantity_cart_item_path(cart_item.product), class: "countNumber-btn countNumber-btn-sub", method: :post) %>
              <input class="countNumber-input" type="text" value="<%= cart_item.quantity %>">
-             <%= link_to("+", add_quantity_cart_item_path(cart_item.product_id), class: "countNumber-btn countNumber-btn-plus", method: :post) %>
+             <%= link_to("+", add_quantity_cart_item_path(cart_item.product), class: "countNumber-btn countNumber-btn-plus", method: :post) %>
 	                   </div>  
 	    <div class="product-subtotal">
 	    	 <span style="color: red"><%= cart_item.product.price * cart_item.quantity %></span>
 	    </div>
 
 	    <div class="product-controller">
-     	      <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
+     	      <%= link_to cart_item_path(cart_item.product), method: :delete do %>
               <i class="btn btn-primary fa fa-trash fa-1.5x" ></i>
               <% end %>
         </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170811074058) do
+ActiveRecord::Schema.define(version: 20170811093936) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20170811074058) do
     t.integer  "quantity",   default: 1
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["product_id"], name: "index_cart_items_on_product_id"
   end
 
   create_table "carts", force: :cascade do |t|
@@ -30,6 +32,8 @@ ActiveRecord::Schema.define(version: 20170811074058) do
     t.integer  "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_collections_on_product_id"
+    t.index ["user_id"], name: "index_collections_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -38,6 +42,7 @@ ActiveRecord::Schema.define(version: 20170811074058) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["product_id"], name: "index_comments_on_product_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -54,6 +59,7 @@ ActiveRecord::Schema.define(version: 20170811074058) do
     t.string   "payment_method"
     t.string   "aasm_state",       default: "order_placed"
     t.index ["aasm_state"], name: "index_orders_on_aasm_state"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -61,6 +67,7 @@ ActiveRecord::Schema.define(version: 20170811074058) do
     t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_photos_on_product_id"
   end
 
   create_table "product_lists", force: :cascade do |t|
@@ -70,6 +77,7 @@ ActiveRecord::Schema.define(version: 20170811074058) do
     t.integer  "quantity"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.index ["order_id"], name: "index_product_lists_on_order_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -81,6 +89,7 @@ ActiveRecord::Schema.define(version: 20170811074058) do
     t.datetime "updated_at",  null: false
     t.string   "image"
     t.string   "category"
+    t.index ["category"], name: "index_products_on_category"
   end
 
   create_table "users", force: :cascade do |t|
